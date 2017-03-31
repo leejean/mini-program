@@ -1,17 +1,5 @@
 {
-  "pages": [
-    "pages/welcome/welcome",
-    "pages/index/index",
-    "pages/components/components",
-    "pages/components/view/view",
-    "pages/components/scroll-view/scroll-view",
-    "pages/components/swiper/swiper",
-    "pages/components/icon/icon",
-    "pages/components/text/text",
-    "pages/components/progress/progress",
-    "pages/components/button/button",
-
-
+  "pages": [    
     "pages/duanzi/duanzi",
     "pages/index/index",
     "pages/welcome/welcome",

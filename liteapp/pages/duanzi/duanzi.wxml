@@ -1,6 +1,6 @@
 <view class="container">
     <view>
-        swiper
+       <!-- swiper -->
        <swiper indicator-dots="{{indicatorDots}} "
                autoplay="{{autoplay}}" 
                interval="{{interval}}" 
@@ -16,7 +16,7 @@
         </block>
       </swiper>
     </view>
-    <view>
+   <!-- <view>
         ICON
         <view>
         <block wx:for="{{iconSize}}">
@@ -52,6 +52,6 @@
 <button bindtap="setDisabled">点击设置以上按钮disabled属性</button>
 <button bindtap="setPlain">点击设置以上按钮plain属性</button>
 <button bindtap="setLoading">点击设置以上按钮loading属性</button>
-    </view>
-</view>
+    </view>-->
+</view> 
 

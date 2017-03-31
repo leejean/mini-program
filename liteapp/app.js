@@ -1,5 +1,15 @@
 //app.js
 App({
+  // "pages/welcome/welcome",
+  //   "pages/index/index",
+  //   "pages/components/components",
+  //   "pages/components/view/view",
+  //   "pages/components/scroll-view/scroll-view",
+  //   "pages/components/swiper/swiper",
+  //   "pages/components/icon/icon",
+  //   "pages/components/text/text",
+  //   "pages/components/progress/progress",
+  //   "pages/components/button/button",
   onLaunch: function () {
     //调用API从本地缓存中获取数据
     var logs = wx.getStorageSync('logs') || []
