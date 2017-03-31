@@ -1,0 +1,57 @@
+<view class="container">
+    <view>
+        swiper
+       <swiper indicator-dots="{{indicatorDots}} "
+               autoplay="{{autoplay}}" 
+               interval="{{interval}}" 
+               duration="{{duration}}"
+               current="{{current}}"
+               circular="{{circular}}" 
+               bindchange="change"
+               >
+        <block wx:for="{{imgUrls}}" wx:key="key">
+          <swiper-item style="text-align:center">
+            <image src="{{item}}" class="slide-image" width="100%" height="150"/>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+    <view>
+        ICON
+        <view>
+        <block wx:for="{{iconSize}}">
+          <icon type="success" size="{{item}}"/>
+        </block>
+        </view>
+        <view>
+        <block wx:for="{{iconType}}">
+          <icon type="{{item}}" size="45"/>
+        </block>
+        </view>
+        <view>
+        <block wx:for="{{iconColor}}">
+          <icon type="success" size="45" color="{{item}}"/>
+        </block>
+        </view>
+    </view>
+    <view>
+        progress
+        <progress percent="20" show-info />
+        <progress percent="40" stroke-width="12" />
+        <progress percent="60" color="pink" />
+        <progress percent="80" active />
+    </view>
+    <view>
+    button
+      <button type="default" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}"
+        disabled="{{disabled}}" bindtap="default" hover-class="other-button-hover"> default </button>
+<button type="primary" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}"
+        disabled="{{disabled}}" bindtap="primary"> primary </button>
+<button type="warn" size="{{warnSize}}" loading="{{loading}}" plain="{{plain}}"
+        disabled="{{disabled}}" bindtap="warn"> warn </button>
+<button bindtap="setDisabled">点击设置以上按钮disabled属性</button>
+<button bindtap="setPlain">点击设置以上按钮plain属性</button>
+<button bindtap="setLoading">点击设置以上按钮loading属性</button>
+    </view>
+</view>
+

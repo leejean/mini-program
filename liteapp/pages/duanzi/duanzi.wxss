@@ -1,0 +1,25 @@
+/**index.wxss**/
+.userinfo {
+  display: flex;
+  
+  align-items: center;
+}
+.container{
+  padding: 0px;
+}
+
+.container>view{
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+/** wxss **/
+/** 修改button默认的点击态样式类**/
+.button-hover {
+  background-color: red;
+}
+/** 添加自定义button点击态样式类**/
+.other-button-hover {
+  background-color: blue;
+}

@@ -1,0 +1,51 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/components/components",
+    "pages/components/view/view",
+    "pages/components/scroll-view/scroll-view",
+    "pages/components/swiper/swiper",
+    "pages/components/icon/icon",
+    "pages/components/text/text",
+    "pages/components/progress/progress",
+    "pages/components/button/button",
+
+
+    "pages/duanzi/duanzi",
+    "pages/index/index",
+    "pages/welcome/welcome",
+    "pages/shiping/shiping",
+    "pages/tupian/tupian"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#FF5E52",
+    "navigationBarTitleText": "段子来了",
+    "navigationBarTextStyle": "#FFFFFF"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/duanzi/duanzi",
+        "text": "小段子",
+        "iconPath":"images/tabs/duanzi.png",
+        "selectedIconPath":"images/tabs/duanzi_hl.png"
+      },
+      {
+        "pagePath": "pages/tupian/tupian",
+        "text": "内涵图",
+        "iconPath":"images/tabs/tupian.png",
+        "selectedIconPath":"images/tabs/tupian_hl.png"
+      },
+      {
+        "pagePath": "pages/shiping/shiping",
+        "text": "小视频",
+        "iconPath":"images/tabs/shiping.png",
+        "selectedIconPath":"images/tabs/shiping_hl.png"
+      }
+    ],
+    "color":"#848484",
+    "borderStyle": "white",
+    "selectedColor":"#FF5E52"
+  }
+}

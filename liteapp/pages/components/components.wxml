@@ -1,0 +1,14 @@
+<view class="components-container">
+
+    <view class="components-group">视图容器</view>
+    <view class="components-item" bindtap="redirect" id="view">view</view>
+    <view class="components-item" bindtap="redirect" id="scroll-view">scroll-view</view>
+    <view class="components-item" bindtap="redirect" id="swiper">swiper</view>
+
+    <view class="components-group">基础组件</view>
+    <view class="components-item" bindtap="redirect" id="icon">icon</view>
+    <view class="components-item" bindtap="redirect" id="text">text</view>
+    <view class="components-item" bindtap="redirect" id="progress">progress</view>
+
+
+</view>

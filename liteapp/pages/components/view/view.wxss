@@ -1,0 +1,4 @@
+.flex-item{width:33.33%;height:100px;text-align:center;color: white;line-height: 100px}
+.bc_green{background-color:#09BA07}
+.bc_red{background-color:#F76160}
+.bc_blue{background-color:#0FAEFF}

@@ -1,0 +1,12 @@
+.components-container{
+    width: 100%;
+    margin:5rpx;
+    flex-direction: rows;
+}
+.components-group{
+    margin:10px 0px 10px 10px;
+}
+.components-item{
+    margin:5px 0px 0px 50px;
+    font-size: 14px;
+}
