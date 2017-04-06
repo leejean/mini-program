@@ -1,0 +1,34 @@
+{
+  "pages":[
+    "pages/flappybird/flappybird",
+    "pages/main/main",
+    "pages/about/about",
+    "pages/waveimage/waveimage",
+    "pages/loveparticle/loveparticle",
+    "pages/me/me",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "whitesmoke",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "backgroundColor": "#f0f0f0",
+    "list": [{
+      "pagePath": "pages/main/main",
+      "text": "List",
+      "iconPath": "images/nav.png",
+      "selectedIconPath": "images/nav_h.png"
+      
+    },
+    {
+      "pagePath": "pages/me/me",
+      "text": "About",
+      "iconPath": "images/me.png",
+      "selectedIconPath": "images/me_h.png"
+    }
+    ]
+  }
+}

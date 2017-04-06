@@ -1,0 +1,17 @@
+<!--pages/main/main.wxml-->
+<!--main.wxml-->
+
+<view class="container">
+        <view style="width:100%; height:30rpx; background-color:white; border-bottom: 1px solid silver;"></view>
+
+        <view class="v-item" wx:for="{{txs}}"  wx:key="index" data-id="../{{item}}/{{item}}" bindtap="onItemClick">
+            <text class="item-tx">{{item}}</text>
+            <image class="item-img" src="../../images/arrow.png"></image>
+        </view>
+
+       
+
+         <view class="v-logo-text">
+             —  Canvas Demo  —
+        </view>
+</view>

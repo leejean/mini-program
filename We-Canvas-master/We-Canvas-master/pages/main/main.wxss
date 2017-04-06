@@ -1,0 +1,22 @@
+/* pages/main/main.wxss */
+.v-item{
+    display: flex;
+    position: relative;
+    width: 100%;
+    flex-flow: row nowrap;
+    height: 100rpx;
+    border-bottom: 1px solid silver;
+    align-items: center;
+}
+
+.item-tx{
+    font-size: 46rpx;
+    margin-left: 20rpx;
+}
+
+.item-img{
+    width: 13px;
+    height: 13px;
+    position: absolute;
+    right: 20rpx;
+}

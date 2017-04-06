@@ -1,0 +1,29 @@
+/**app.wxss**/
+
+
+
+page{
+  height: 100%;
+  font-family:Times New Roman,Georgia,Serif;
+  background-color: whitesmoke;
+}
+
+
+.container{
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  flex-flow: column nowrap;
+  
+}
+
+
+.v-logo-text{
+  font-size: 22px;
+  color: lightskyblue;
+  position: absolute;
+  bottom: 120rpx;
+  text-shadow: 3px 3px 3px lightblue;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}

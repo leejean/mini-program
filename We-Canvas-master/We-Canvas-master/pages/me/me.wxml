@@ -1,0 +1,11 @@
+<!--pages/me/me.wxml-->
+<view style="display:flex; flex-flow:column nowrap;justify-content:center; align-items:center;padding-top:150px;">
+  <view  bindtap="bindViewTap" class="userinfo">
+    <image class="userinfo-avatar" src="../../images/avatar.png" background-size="cover" style="width:60px; height:60px;"></image>
+  </view>
+
+  <view>Jeffer</view>
+  <view style="margin-top:80px;">github:</view>
+  <view style="border-bottom:1px solid deepskyblue;">https://github.com/jeffer0323/We-Canvas</view>
+  
+</view>
