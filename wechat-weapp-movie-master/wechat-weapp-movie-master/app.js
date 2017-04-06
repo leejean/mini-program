@@ -22,12 +22,12 @@ App({
       }
     })
   },
-  getCity: function(cb) {
+  getCity2: function(cb) {
     var city = '深圳'
     config.city = city
     typeof cb == "function" && cb(city)
   },
-  getCity2: function(cb) {
+  getCity: function(cb) {
     //备份源码
     var that = this
     wx.getLocation({
