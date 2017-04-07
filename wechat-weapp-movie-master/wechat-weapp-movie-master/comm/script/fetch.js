@@ -3,6 +3,7 @@ var message = require('../../component/message/message')
 
 // 获取电影列表
 function fetchFilms(url, start, count, cb, fail_cb) {
+  config.debug&&console.info(url);
   var that = this
   message.hide.call(that)
   if (that.data.hasMore) {

@@ -10,9 +10,12 @@ bannerList: 首页（热映页）轮播图列表列表
 skinList: “我的”页面背景列表
 shakeSound: 摇一摇音效地址（带url表示远程地址）
 shakeWelcomeImg: 摇一摇欢迎图片
+
+ydw4WUzsbmrQ3kw9k0SHWGjDQA73FR70
 */
 var url = 'https://static.sesine.com/wechat-weapp-movie'
 module.exports = {
+    debug:true,
     city: '',
     count: 20,
     baiduAK: 'Y1R5guY8Y2GNRdDpLz7SUeM3QgADAXec',
