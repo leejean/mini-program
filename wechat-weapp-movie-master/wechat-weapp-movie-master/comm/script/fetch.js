@@ -4,6 +4,7 @@ var message = require('../../component/message/message')
 // 获取电影列表
 function fetchFilms(url, start, count, cb, fail_cb) {
   var that = this
+  //关闭message
   message.hide.call(that)
   if (that.data.hasMore) {
     wx.request({
