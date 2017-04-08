@@ -1,13 +1,10 @@
 # wechat-weapp-movie v2.0
 
-AppID(小程序ID) wxb945e7beb12d7059
-AppSecret(小程序密钥) e63864af982cecc9b17b8ad4735bb2d4 复制
-
 > 微信小程序 - 电影推荐 v2.0
 
 话不多说，先上图
 
-![UI](http://139.196.214.241:8093/cdn/screenshot/movie v2.0.jpg)
+![UI](http://139.196.214.241:8093/cdn/screenshot/movie%20v2.0.jpg)
 
 ## 感谢与支持
 - 豆瓣api https://developers.douban.com/

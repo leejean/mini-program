@@ -3,7 +3,6 @@ var message = require('../../component/message/message')
 
 // 获取电影列表
 function fetchFilms(url, start, count, cb, fail_cb) {
-  config.debug&&console.info(url);
   var that = this
   message.hide.call(that)
   if (that.data.hasMore) {
@@ -12,7 +11,7 @@ function fetchFilms(url, start, count, cb, fail_cb) {
       data: {
         city: config.city,
         start: start,
-        count: count
+        count: config.count
       },
       method: 'GET', 
       header: {
@@ -29,6 +28,7 @@ function fetchFilms(url, start, count, cb, fail_cb) {
             start: that.data.start + res.data.subjects.length,
             showLoading: false
           })
+          console.log(that.data.start);
         }
         wx.stopPullDownRefresh()
         typeof cb == 'function' && cb(res.data)
