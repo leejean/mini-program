@@ -1,27 +1,103 @@
 var config = require('comm/script/config')
+var httpclient = require('util/httpclient.js')
 App({
   globalData: {
-    userInfo: null
+    userInfo: null,
+    loginCode: null,
+    encryptedData: null,
+    iv: null,
+    server: 'https://localhost:8080/weappservice/api/v1',
+    appId: 'wxb945e7beb12d7059',
+    apiNames: ['WX_CODE', 'WX_CHECK_USER', 'WX_DECODE_USERINFO']
   },
   onLaunch: function() {
     // 获取用户信息
-    this.getUserInfo()
+    this.initUserInfo()
     //初始化缓存
     this.initStorage()
+
+    //this.get3rdSessionId()
+
+    //this.getUserAllData()
   },
-  getUserInfo:function(cb){
+  initUserInfo:function(cb){
     var that = this
     wx.login({
-      success: function () {
+      success: function (res) {
+        that.globalData.loginCode = res.code
         wx.getUserInfo({
           success: function (res) {
             that.globalData.userInfo = res.userInfo
+            that.globalData.iv = res.iv
+            that.globalData.encryptedData = res.encryptedData
             typeof cb == "function" && cb(that.globalData.userInfo)
+            debugger;
+            that.get3rdSessionId()
           }
         })
       }
     })
   },
+  // 从服务端获取sessionId
+  get3rdSessionId: function (e) {
+    debugger;
+    var that = this;
+    // //根据code获取sessionsession_key和openid
+    // wx.showToast({
+    //   title: '正在请求',
+    //   icon: 'loading',
+    //   duration: 10000
+    // });
+    console.info(that.globalData.loginCode);
+    httpclient.req(
+      'http://127.0.0.1:8080/api/v1/wx/getSession',
+      {
+        apiName: 'WX_CODE',
+        code: that.globalData.loginCode
+      },
+      'GET',
+      function (result) {
+        // wx.hideToast()
+        var sessionId = result.data.data.sessionId;
+        that.setData({ sessionId: sessionId })
+        wx.setStorageSync('sessionId', sessionId)
+      },
+      function (result) {
+        console.log(result)
+      }
+    );
+  },
+  //解密用户敏感数据
+  getUserAllData: function (e) {
+    var that = this;
+    // wx.showToast({
+    //   title: '正在请求',
+    //   icon: 'loading',
+    //   duration: 10000
+    // })
+    httpclient.req(
+      '/wx/decodeUserInfo',
+      {
+        apiName: 'WX_DECODE_USERINFO',
+        encryptedData: that.globalData.encryptedData,
+        iv: that.globalData.iv,
+        sessionId: wx.getStorageSync('sessionId')
+      },
+      'GET',
+      function (result) {
+        // wx.hideToast()
+        var data = JSON.parse(result.data.data);
+        that.setData({
+          openId: data.openId,
+          unionId: data.unionId,
+          nickname1: data.nickName
+        })
+      },
+      function (result) {
+        console.log(result)
+      }
+    );
+  },    
   getCity: function(cb) {
     var that = this
     wx.getLocation({
