@@ -1,11 +1,9 @@
 var config = require('comm/script/config')
-var httpclient = require('util/httpclient.js')
+var user = require('comm/script/user')
 App({
   globalData: {
     userInfo: null,
     loginCode: null,
-    encryptedData: null,
-    iv: null,
     server: config.server,
     appId: config.appId,
     apiNames: ['WX_CODE', 'WX_CHECK_USER', 'WX_DECODE_USERINFO']
@@ -14,7 +12,7 @@ App({
     // 获取用户信息
     this.initUserInfo()
     //初始化缓存
-    this.initStorage()
+    //this.initStorage()
 
     //this.get3rdSessionId()
 
@@ -27,74 +25,20 @@ App({
         that.globalData.loginCode = res.code
         wx.getUserInfo({
           success: function (res) {
-            that.globalData.userInfo = res.userInfo
-            that.globalData.iv = res.iv
-            that.globalData.encryptedData = res.encryptedData
-            typeof cb == "function" && cb(that.globalData.userInfo)
+            var data = {
+            	code:that.globalData.loginCode,
+            	encryptedData:res.encryptedData,
+            	iv:res.iv
+            }
+            user.getUserInfo.call(that,data,function(dto){
+            	that.globalData.userInfo = dto.data
+            	console.info(that.globalData.userInfo)
+            })
           }
         })
       }
     })
   },
-  // 从服务端获取sessionId
-  get3rdSessionId: function (e) {
-    var that = this;
-    // //根据code获取sessionsession_key和openid
-    // wx.showToast({
-    //   title: '正在请求',
-    //   icon: 'loading',
-    //   duration: 10000
-    // });
-    console.info(that.globalData.loginCode);
-    httpclient.req(
-      'http://127.0.0.1:8080/api/v1/wx/getSession',
-      {
-        apiName: 'WX_CODE',
-        code: that.globalData.loginCode
-      },
-      'GET',
-      function (result) {
-        // wx.hideToast()
-        var sessionId = result.data.data.sessionId;
-        that.setData({ sessionId: sessionId })
-        wx.setStorageSync('sessionId', sessionId)
-      },
-      function (result) {
-        console.log(result)
-      }
-    );
-  },
-  //解密用户敏感数据
-  getUserAllData: function (e) {
-    var that = this;
-    // wx.showToast({
-    //   title: '正在请求',
-    //   icon: 'loading',
-    //   duration: 10000
-    // })
-    httpclient.req(
-      '/wx/decodeUserInfo',
-      {
-        apiName: 'WX_DECODE_USERINFO',
-        encryptedData: that.globalData.encryptedData,
-        iv: that.globalData.iv,
-        sessionId: wx.getStorageSync('sessionId')
-      },
-      'GET',
-      function (result) {
-        // wx.hideToast()
-        var data = JSON.parse(result.data.data);
-        that.setData({
-          openId: data.openId,
-          unionId: data.unionId,
-          nickname1: data.nickName
-        })
-      },
-      function (result) {
-        console.log(result)
-      }
-    );
-  },    
   getCity: function(cb) {
     var that = this
     wx.getLocation({

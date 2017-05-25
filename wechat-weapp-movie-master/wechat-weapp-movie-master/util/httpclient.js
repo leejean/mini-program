@@ -1,10 +1,12 @@
 var app = getApp();
-function req(url, data, method, success, fail){
+function request(url, data, method, success, fail){
     var mydata = data || {};
-    mydata['appId'] = app.globalData.appId;
     wx.request({
-      url: app.globalData.server + url,
+      url: url,
       data: mydata,
+      header: {
+      	"Content-Type": "application/x-www-form-urlencoded"
+      },
       method: method,
       success: success,
       fail: fail,
@@ -14,5 +16,5 @@ function req(url, data, method, success, fail){
     })
 }
 module.exports = {
-  req: req
+  request: request
 }

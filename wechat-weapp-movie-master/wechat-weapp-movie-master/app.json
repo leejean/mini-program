@@ -22,7 +22,7 @@
     "pages/location/location"
   ],
   "window": {
-    "navigationBarBackgroundColor": "#47a86c",
+    "navigationBarBackgroundColor": "#27c79a",
     "navigationBarTextStyle": "white",
     "navigationBarTitleText":  "电影推荐",
     "backgroundColor": "#fff",
