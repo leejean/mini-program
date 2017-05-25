@@ -13,6 +13,8 @@ shakeWelcomeImg: 摇一摇欢迎图片
 */
 var url = 'https://static.sesine.com/wechat-weapp-movie'
 module.exports = {
+	server:'https://localhost:8080/',
+	appId:'wxb945e7beb12d7059',
     city: '',
     count: 20,//数据默认拉取数目
     baiduAK: 'Y1R5guY8Y2GNRdDpLz7SUeM3QgADAXec',

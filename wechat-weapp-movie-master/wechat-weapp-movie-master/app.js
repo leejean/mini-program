@@ -6,8 +6,8 @@ App({
     loginCode: null,
     encryptedData: null,
     iv: null,
-    server: 'https://localhost:8080/weappservice/api/v1',
-    appId: 'wxb945e7beb12d7059',
+    server: config.server,
+    appId: config.appId,
     apiNames: ['WX_CODE', 'WX_CHECK_USER', 'WX_DECODE_USERINFO']
   },
   onLaunch: function() {
@@ -31,8 +31,6 @@ App({
             that.globalData.iv = res.iv
             that.globalData.encryptedData = res.encryptedData
             typeof cb == "function" && cb(that.globalData.userInfo)
-            debugger;
-            that.get3rdSessionId()
           }
         })
       }
@@ -40,7 +38,6 @@ App({
   },
   // 从服务端获取sessionId
   get3rdSessionId: function (e) {
-    debugger;
     var that = this;
     // //根据code获取sessionsession_key和openid
     // wx.showToast({

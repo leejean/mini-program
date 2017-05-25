@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/home/home",
     "pages/popular/popular",
     "pages/coming/coming",
     "pages/top/top",
@@ -34,21 +35,21 @@
     "backgroundColor": "#ffffff",
     "borderStyle": "white",
     "list": [{
-      "pagePath": "pages/popular/popular",
+      "pagePath": "pages/home/home",
       "iconPath": "dist/images/popular_icon.png",
       "selectedIconPath": "dist/images/popular_active_icon.png",
-      "text": "热映"
+      "text": "发现"
     }, {
       "pagePath": "pages/coming/coming",
       "iconPath": "dist/images/coming_icon.png",
       "selectedIconPath": "dist/images/coming_active_icon.png",
-      "text": "待映"
+      "text": "悬赏"
     },
     {
       "pagePath": "pages/top/top",
       "iconPath": "dist/images/top_icon.png",
       "selectedIconPath": "dist/images/top_active_icon.png",
-      "text": "口碑"
+      "text": "发布"
     },
     {
       "pagePath": "pages/my/my",
