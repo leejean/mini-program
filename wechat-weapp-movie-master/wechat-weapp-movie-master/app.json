@@ -1,6 +1,7 @@
 {
   "pages": [
-    "pages/home/home",
+    "pages/image/image",
+    "pages/home/home",    
     "pages/popular/popular",
     "pages/coming/coming",
     "pages/top/top",
@@ -35,6 +36,11 @@
     "backgroundColor": "#ffffff",
     "borderStyle": "white",
     "list": [{
+        "pagePath": "pages/image/image",
+        "iconPath": "dist/images/popular_icon.png",
+        "selectedIconPath": "dist/images/popular_active_icon.png",
+        "text": "TEST"
+      },{
       "pagePath": "pages/home/home",
       "iconPath": "dist/images/popular_icon.png",
       "selectedIconPath": "dist/images/popular_active_icon.png",
