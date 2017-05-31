@@ -40,8 +40,8 @@ Page({
           imageList: res.tempFilePaths
         })
         wx.uploadFile({
-//		      url: 'https://leejean.cn/api/file/upload', 
-		      url: 'http://127.0.0.1:8080/api/file/upload', 
+		      url: 'http://120.77.201.110:8080/api/file/upload', 
+		     // url: 'http://127.0.0.1:8080/api/file/upload', 
 		      filePath: that.data.imageList[0],
 		      name: 'file',
 		      formData:{},
