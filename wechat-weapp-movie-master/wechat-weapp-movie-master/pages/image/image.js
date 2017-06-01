@@ -1,6 +1,6 @@
 var sourceType = [ ['camera'], ['album'], ['camera', 'album'] ]
 var sizeType = [ ['compressed'], ['original'], ['compressed', 'original'] ]
-
+var app = getApp()
 Page({
   data: {
     imageList: [],
@@ -12,6 +12,9 @@ Page({
 
     countIndex: 8,
     count: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+  },
+  onLoad: function() {
+  	console.info(app)
   },
   sourceTypeChange: function (e) {
     this.setData({
@@ -40,8 +43,7 @@ Page({
           imageList: res.tempFilePaths
         })
         wx.uploadFile({
-		      url: 'https://leejean.cn/api/file/upload', 
-		     // url: 'http://127.0.0.1:8080/api/file/upload', 
+		      url: app.globalData.server + 'api/file/upload', 
 		      filePath: that.data.imageList[0],
 		      name: 'file',
 		      success: function(res){
