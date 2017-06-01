@@ -40,15 +40,25 @@ Page({
           imageList: res.tempFilePaths
         })
         wx.uploadFile({
-		      url: 'http://120.77.201.110:8080/api/file/upload', 
+		      url: 'https://leejean.cn/api/file/upload', 
 		     // url: 'http://127.0.0.1:8080/api/file/upload', 
 		      filePath: that.data.imageList[0],
 		      name: 'file',
-		      formData:{},
 		      success: function(res){
-		      	console.log(res)
-		        var data = res.data
-		        //do something
+		        var data = JSON.parse(res.data)
+		        if(data.status){
+		        	wx.showToast({
+							  title: data.msg,
+							  icon: 'success',
+							  duration: 2000
+							})
+		        }else{
+		        	wx.showToast({
+							  title: data.msg,
+							  icon: 'success',
+							  duration: 2000
+							})
+		        }
 		      }
 		    })
       }
