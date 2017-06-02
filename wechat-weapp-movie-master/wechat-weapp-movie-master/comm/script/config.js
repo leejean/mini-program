@@ -110,4 +110,4 @@ var prod = {
     },
     shakeWelcomeImg: url + '/images/shake_welcome.png'
 }
-module.exports = test;
+module.exports = prod;
