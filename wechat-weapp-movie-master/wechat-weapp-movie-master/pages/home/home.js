@@ -1,13 +1,24 @@
 var douban = require('../../comm/script/fetch')
 var config = require('../../comm/script/config')
+var info = require('../../comm/script/info')
 var app = getApp()
 Page({
 	data: {
+		server:config.server,
 		films: [],
 		hasMore: true,//是否有更多数据标记
 		showLoading: true,
-		start: 0,
-		bannerList: config.bannerList
+		page:1,
+		pagesize:4,
+		bannerList: config.bannerList,
+		queryData:{
+			longitude:113.877012,
+			latitude:22.575624,
+			scope:100,
+			infoType:1,
+			keyWord:''
+		},
+		infos:[]
 	},
 	onLoad: function() {
 		var that = this
@@ -17,19 +28,29 @@ Page({
 			//隐藏导航条加载动画
 			wx.hideNavigationBarLoading()
 			wx.setNavigationBarTitle({
-				title: '正在热映 - ' + config.city
+				title: '发现- ' + config.city
 			})
-			douban.fetchFilms.call(that, config.apiList.popular, that.data.start)
+		})
+		that.data.queryData.page=that.data.page;
+		that.data.queryData.pagesize=that.data.pagesize;
+		info.getInfos.call(that, that.data.queryData,function(dto){
+			that.setData({
+	    		infos: that.data.infos.concat(dto.data.rows),
+	   			page:that.data.page+1,
+	    		showLoading: false,
+	    		hasMore:dto.data.page==dto.data.pageCount
+	  		})
+			console.info(that.data.page)
 		})
 	},
 	//监听该页面用户下拉刷新事件
 	onPullDownRefresh: function() {
 		var that = this
 		that.setData({
-			films: [],
+			infos: [],
 			hasMore: true,
 			showLoading: true,
-			start: 0
+			page: 1
 		})
 		this.onLoad()
 	},
@@ -37,15 +58,26 @@ Page({
 	onReachBottom: function() {
 		var that = this
 		if (!that.data.showLoading) {
-			douban.fetchFilms.call(that, config.apiList.popular, that.data.start)
+			that.data.queryData.page=that.data.page;
+			that.data.queryData.pagesize=that.data.pagesize;
+			info.getInfos.call(that, that.data.queryData,function(dto){
+			that.setData({
+	    		infos: that.data.infos.concat(dto.data.rows),
+	   			page:that.data.page+1,
+	    		showLoading: false,
+	    		hasMore:dto.data.page==dto.data.pageCount
+	    		
+	  		})
+		})
 		}
 	},
 	//详情
-	viewFilmDetail: function(e) {
+	viewInfoDetail: function(e) {
 		var data = e.currentTarget.dataset;
-		wx.navigateTo({
-			url: "../filmDetail/filmDetail?id=" + data.id
-		})
+		console.info(data.id)
+//		wx.navigateTo({
+//			url: "../filmDetail/filmDetail?id=" + data.id
+//		})
 	},
 	//点击标签	
 	viewFilmByTag: function(e) {

@@ -12,7 +12,7 @@ shakeSound: 摇一摇音效地址（带url表示远程地址）
 shakeWelcomeImg: 摇一摇欢迎图片
 */
 var url = 'https://static.sesine.com/wechat-weapp-movie'
-var test = {
+var dev = {
 	server:'http://127.0.0.1:8080/',
 	appId:'wx4a509c6b5c79bd94',
     city: '',
@@ -110,4 +110,4 @@ var prod = {
     },
     shakeWelcomeImg: url + '/images/shake_welcome.png'
 }
-module.exports = prod;
+module.exports = dev;

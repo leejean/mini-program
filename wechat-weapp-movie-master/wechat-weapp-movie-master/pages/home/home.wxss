@@ -1,4 +1,4 @@
-@import "../../component/filmList/filmList.wxss";
+@import "../../component/infoList/infoList.wxss";
 @import "../../component/message/message.wxss";
 .search-bar {
     box-sizing: border-box;

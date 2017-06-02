@@ -1,7 +1,7 @@
 {
   "pages": [
+    "pages/home/home", 
     "pages/image/image",
-    "pages/home/home",    
     "pages/popular/popular",
     "pages/coming/coming",
     "pages/top/top",
@@ -68,5 +68,5 @@
     "request": 10000,
     "downloadFile": 10000
   },
-  "debug": true
+  "debug": false
 }

@@ -1,0 +1,27 @@
+<template name="infoList">
+<block wx:if="{{showLoading}}">
+    <view class="loading">玩命加载中…</view>
+</block>
+<block wx:else>
+    <view class="info">
+        <block wx:for="{{infos}}" wx:for-index="infoIndex" wx:for-item="infoItem" wx:key="info">
+             <view catchtap="viewInfoDetail" data-id="{{infoItem.id}}" class="info-item">
+                <view class="info-img">
+                    <image src="{{infoItem.imgs}}" class="info-cover-img"></image>
+                </view>
+                <view class="info-detail">
+                    <view class="title">{{infoItem.title}}</view>
+                    <view class="desc">详情:{{infoItem.infoDesc}}</view>
+                    <view class="loaction">地点:{{infoItem.locationDesc}}</view>
+                </view>
+            </view>
+        </block>
+        <block wx:if="{{hasMore}}">
+            <view class="loading-tip">拼命加载中…</view>
+        </block>
+        <block wx:else>
+            <view class="loading-tip">没有更多内容了</view>
+        </block>
+    </view>
+</block>
+</template>

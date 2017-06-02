@@ -1,8 +1,8 @@
 <import src="../../component/nullTip/nullTip.wxml"/>
 <view class="tab">
 <view class="tab-header">
-    <view class="tab-header-item {{show == 'film_history' ? 'tab-header-active' : ''}}" data-type="film_history" bindtap="changeViewType">电影</view>
-    <view class="tab-header-item {{show == 'person_history' ? 'tab-header-active' : ''}}" data-type="person_history" bindtap="changeViewType">人物</view>
+    <view class="tab-header-item {{show == 'film_history' ? 'tab-header-active' : ''}}" data-type="film_history" bindtap="changeViewType">失物启示</view>
+    <view class="tab-header-item {{show == 'person_history' ? 'tab-header-active' : ''}}" data-type="person_history" bindtap="changeViewType">招领启示</view>
 </view>
 <view class="tab-content">
     <view class="tab-content-item" hidden="{{show == 'film_history' ? false : true}}">
