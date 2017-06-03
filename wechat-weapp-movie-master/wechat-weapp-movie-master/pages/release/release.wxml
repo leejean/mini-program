@@ -3,44 +3,29 @@
         <view class="form-item">
             <view class="form-item-hd">标题</view>
             <view class="form-item-bd">
-                <input type="text" name="title" value="{{title}}" placeholder="请输入启示标题" maxlength="10"/>
+                <input type="text" name="title" value="{{title}}" placeholder="请填写标题" maxlength="10"/>
+            </view>
+        </view>
+         <view class="form-item">
+            <view class="form-item-hd">地点</view>
+            <view class="form-item-bd">
+                <input type="text" name="locationDesc" value="{{locationDesc}}" placeholder="{{infoType==1?'请填写丢失物品大概位置，如解放路':'请填写捡到物品大概位置，如解放路'}}" maxlength="50"/>
+            </view>
+        </view>
+        <view class="form-item">
+            <view class="form-item-hd">详情说明</view>
+            <view class="form-item-bd" style="height:75px;margin:15rpx 0 0 15rpx;">
+                <textarea name="infoDesc"   placeholder="{{infoType==1?'请填写丢失物品详情，如身份证、钱包':'请填写捡到物品详情，如身份证、钱包'}}" maxlength="50" cols="30" style="width:400rpx;">{{infoDesc}}</textarea>
             </view>
         </view>
        
-        <view class="form-item">
-            <view class="form-item-hd">类型</view>
-            <view class="form-item-bd">
-                <picker mode="selector" value="{{typeIndex}}" range="{{infoTypes}}" bindchange="changeType">
-                    <block wx:if="{{infoTypeName == ''}}">
-                        <view class="input input-placeholder">请选择启示类型</view>
-                        <input type="text" name="infoType" value="" class="hidden" maxlength="4"/>
-                    </block>
-                    <block wx:else>
-                        <view class="input">{{infoTypeName}}</view>
-                        <input type="text" name="infoType" value="{{infoType}}" class="hidden" maxlength="4"/>
-                    </block>
-                </picker>
-            </view>
-        </view>
-        <view class="form-item">
-            <view class="form-item-hd">详情</view>
-            <view class="form-item-bd">
-                <input type="text" name="infoDesc" value="{{infoDesc}}" placeholder="请输入启示详情" maxlength="50"/>
-            </view>
-        </view>
-        <view class="form-item">
-            <view class="form-item-hd">地点</view>
-            <view class="form-item-bd">
-                <input type="text" name="locationDesc" value="{{locationDesc}}" placeholder="请输入位置" maxlength="50"/>
-            </view>
-        </view>
       
       <view class="weui-cells">
           <view class="weui-cell">
             <view class="weui-cell__bd">
               <view class="weui-uploader">
                 <view class="weui-uploader__hd">
-                  <view class="weui-uploader__title">点击可预览选好的图片</view>
+                  <view class="weui-uploader__title">上传{{infoType==1?'丢失物品图片，方便您快速找回':'捡到物品图片，方便失主快速找回'}}</view>
                   <view class="weui-uploader__info">{{imageList.length}}/{{count}}</view>
                 </view>
                 <view class="weui-uploader__bd">

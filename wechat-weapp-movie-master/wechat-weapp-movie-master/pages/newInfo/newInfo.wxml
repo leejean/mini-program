@@ -1,0 +1,4 @@
+<view class="btn-group">
+	<view bindtap="navigateTo" data-id="1" class="btn">发布失物启示</view>
+	<view bindtap="navigateTo" data-id="2" class="btn">发布招领启示</view>
+</view>

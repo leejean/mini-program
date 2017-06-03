@@ -15,7 +15,7 @@ Page({
 			//longitude:113.877012,
 			//latitude:22.575624,
 			//scope:100,
-			infoType:1,
+			//infoType:1,
 			keyWord:''
 		},
 		infos:[]
@@ -62,7 +62,7 @@ Page({
 			info.getInfos.call(that, that.data.queryData,function(dto){
 			that.setData({
 	    		infos: that.data.infos.concat(dto.data.rows),
-	   			page:that.data.page+1,
+	   			page:dto.data.rows.length>0?that.data.page+1:dto.data.page,
 	    		showLoading: false,
 	    		hasMore:dto.data.page==dto.data.pageCount
 	    		

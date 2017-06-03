@@ -1,8 +1,10 @@
 {
   "pages": [
+    "pages/newInfo/newInfo",
     "pages/home/home", 
     "pages/release/release", 
-    "pages/image/image",
+    
+    
     "pages/popular/popular",
     "pages/coming/coming",
     "pages/top/top",
@@ -36,12 +38,8 @@
     "selectedColor": "#47a86c",
     "backgroundColor": "#ffffff",
     "borderStyle": "white",
-    "list": [{
-        "pagePath": "pages/image/image",
-        "iconPath": "dist/images/popular_icon.png",
-        "selectedIconPath": "dist/images/popular_active_icon.png",
-        "text": "TEST"
-      },{
+    "list": [
+    {
       "pagePath": "pages/home/home",
       "iconPath": "dist/images/popular_icon.png",
       "selectedIconPath": "dist/images/popular_active_icon.png",
@@ -53,7 +51,7 @@
       "text": "悬赏"
     },
     {
-      "pagePath": "pages/release/release",
+      "pagePath": "pages/newInfo/newInfo",
       "iconPath": "dist/images/top_icon.png",
       "selectedIconPath": "dist/images/top_active_icon.png",
       "text": "发布"
