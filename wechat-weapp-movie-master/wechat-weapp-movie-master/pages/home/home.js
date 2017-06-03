@@ -27,9 +27,9 @@ Page({
 		app.getCity(function(){
 			//隐藏导航条加载动画
 			wx.hideNavigationBarLoading()
-			wx.setNavigationBarTitle({
-				title: '发现- ' + config.city
-			})
+//			wx.setNavigationBarTitle({
+//				title: '发现- ' + config.city
+//			})
 		})
 		that.data.queryData.page=that.data.page;
 		that.data.queryData.pagesize=that.data.pagesize;
@@ -40,7 +40,6 @@ Page({
 	    		showLoading: false,
 	    		hasMore:dto.data.page==dto.data.pageCount
 	  		})
-			console.info(that.data.page)
 		})
 	},
 	//监听该页面用户下拉刷新事件
@@ -74,37 +73,12 @@ Page({
 	//详情
 	viewInfoDetail: function(e) {
 		var data = e.currentTarget.dataset;
-		console.info(data.id)
-//		wx.navigateTo({
-//			url: "../filmDetail/filmDetail?id=" + data.id
-//		})
-	},
-	//点击标签	
-	viewFilmByTag: function(e) {
-		var data = e.currentTarget.dataset
-		var keyword = data.tag
-		wx.navigateTo({
-			url: '../searchResult/searchResult?url=' + encodeURIComponent(config.apiList.search.byTag) + '&keyword=' + keyword
-		})
+		console.info(data)
 	},
 	//点击轮播图
 	viewBannerDetail: function(e) {
 		var data = e.currentTarget.dataset
-		if (data.type == 'film') {
-			wx.navigateTo({
-				url: "../filmDetail/filmDetail?id=" + data.id
-			})
-		} else if (data.type == 'person') {
-			wx.navigateTo({
-				url: '../personDetail/personDetail?id=' + data.id
-			})
-		} else if (data.type == 'search') {
-			// stype(searchType) 0:关键词, 1:类型标签
-			var searchUrl = stype == 'keyword' ? config.search.byKeyword : config.search.byTag
-			wx.navigateTo({
-				url: '../searchResult/searchResult?url=' + encodeURIComponent(searchUrl) + '&keyword=' + keyword
-			})
-		}
+		console.info(data);
 	},
 	//跳转到搜索页
 	viewSearch: function() {

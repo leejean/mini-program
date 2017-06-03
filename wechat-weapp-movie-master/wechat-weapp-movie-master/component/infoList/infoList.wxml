@@ -7,7 +7,7 @@
         <block wx:for="{{infos}}" wx:for-index="infoIndex" wx:for-item="infoItem" wx:key="info">
              <view catchtap="viewInfoDetail" data-id="{{infoItem.id}}" class="info-item">
                 <view class="info-img">
-                    <image src="{{infoItem.imgs}}" class="info-cover-img"></image>
+                    <image src="{{infoItem.mainImg}}" class="info-cover-img"></image>
                 </view>
                 <view class="info-detail">
                     <view class="title">{{infoItem.title}}</view>

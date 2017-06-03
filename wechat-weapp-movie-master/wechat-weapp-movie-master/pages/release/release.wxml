@@ -1,0 +1,66 @@
+<form bindsubmit="save">
+    <view class="form-list">
+        <view class="form-item">
+            <view class="form-item-hd">标题</view>
+            <view class="form-item-bd">
+                <input type="text" name="title" value="{{title}}" placeholder="请输入启示标题" maxlength="10"/>
+            </view>
+        </view>
+       
+        <view class="form-item">
+            <view class="form-item-hd">类型</view>
+            <view class="form-item-bd">
+                <picker mode="selector" value="{{typeIndex}}" range="{{infoTypes}}" bindchange="changeType">
+                    <block wx:if="{{infoTypeName == ''}}">
+                        <view class="input input-placeholder">请选择启示类型</view>
+                        <input type="text" name="infoType" value="" class="hidden" maxlength="4"/>
+                    </block>
+                    <block wx:else>
+                        <view class="input">{{infoTypeName}}</view>
+                        <input type="text" name="infoType" value="{{infoType}}" class="hidden" maxlength="4"/>
+                    </block>
+                </picker>
+            </view>
+        </view>
+        <view class="form-item">
+            <view class="form-item-hd">详情</view>
+            <view class="form-item-bd">
+                <input type="text" name="infoDesc" value="{{infoDesc}}" placeholder="请输入启示详情" maxlength="50"/>
+            </view>
+        </view>
+        <view class="form-item">
+            <view class="form-item-hd">地点</view>
+            <view class="form-item-bd">
+                <input type="text" name="locationDesc" value="{{locationDesc}}" placeholder="请输入位置" maxlength="50"/>
+            </view>
+        </view>
+      
+      <view class="weui-cells">
+          <view class="weui-cell">
+            <view class="weui-cell__bd">
+              <view class="weui-uploader">
+                <view class="weui-uploader__hd">
+                  <view class="weui-uploader__title">点击可预览选好的图片</view>
+                  <view class="weui-uploader__info">{{imageList.length}}/{{count}}</view>
+                </view>
+                <view class="weui-uploader__bd">
+                  <view class="weui-uploader__files">
+                    <block wx:for="{{imageList}}" wx:for-item="image">
+                      <view class="weui-uploader__file">
+                        <image class="weui-uploader__img" src="{{image}}" data-src="{{image}}" bindtap="previewImage"></image>
+                      </view>
+                    </block>
+                  </view>
+                  <view class="weui-uploader__input-box" hidden="{{!canChoose}}">
+                    <view class="weui-uploader__input" bindtap="chooseImage"></view>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+        
+    </view>
+    
+    <button formType="submit" class="edit-btn">保 存</button>
+</form>

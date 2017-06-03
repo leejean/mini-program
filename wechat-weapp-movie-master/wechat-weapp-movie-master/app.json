@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/home/home", 
+    "pages/release/release", 
     "pages/image/image",
     "pages/popular/popular",
     "pages/coming/coming",
@@ -52,7 +53,7 @@
       "text": "悬赏"
     },
     {
-      "pagePath": "pages/top/top",
+      "pagePath": "pages/release/release",
       "iconPath": "dist/images/top_icon.png",
       "selectedIconPath": "dist/images/top_active_icon.png",
       "text": "发布"

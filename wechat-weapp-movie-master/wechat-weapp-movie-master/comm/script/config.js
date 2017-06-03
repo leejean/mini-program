@@ -11,103 +11,74 @@ skinList: “我的”页面背景列表
 shakeSound: 摇一摇音效地址（带url表示远程地址）
 shakeWelcomeImg: 摇一摇欢迎图片
 */
-var url = 'https://static.sesine.com/wechat-weapp-movie'
+/**
+ * 静态图片访问地址
+ */
+var static_url = 'https://zhaoya.oss-cn-shanghai.aliyuncs.com'
+var prod = {
+    server:'https://leejean.cn/',
+	appId:'wx4a509c6b5c79bd94',
+    city: '',
+    count: 20,//数据默认拉取数目
+    baiduAK: 'Y1R5guY8Y2GNRdDpLz7SUeM3QgADAXec',
+    apiList: {
+        popular: 'https://api.douban.com/v2/movie/in_theaters',
+        coming: 'https://api.douban.com/v2/movie/coming_soon',
+        top: 'https://api.douban.com/v2/movie/top250',
+        search: {
+            byKeyword: 'https://api.douban.com/v2/movie/search?q=', 
+            byTag: 'https://api.douban.com/v2/movie/search?tag='
+        },
+        filmDetail: 'https://api.douban.com/v2/movie/subject/',
+        personDetail: 'https://api.douban.com/v2/movie/celebrity/',
+        baiduMap: 'https://api.map.baidu.com/geocoder/v2/'
+    },
+    hotKeyword: ['功夫熊猫', '烈日灼心', '摆渡人', '长城', '我不是潘金莲', '这个杀手不太冷', '驴得水', '海贼王之黄金城', '西游伏妖片', '我在故宫修文物', '你的名字'],
+    hotTag: ['动作', '喜剧', '爱情', '悬疑'],
+    bannerList: [
+        {type:'film', id: '26683290', imgUrl: static_url + '/banner/banner_1.jpg'},
+        {type:'film', id: '25793398', imgUrl: static_url + '/banner/banner_2.jpg'},
+        {type:'film', id: '26630781', imgUrl: static_url + '/banner/banner_3.jpg'},
+        {type:'film', id: '26415200', imgUrl: static_url + '/banner/banner_4.jpg'},
+        {type:'film', id: '3025375', imgUrl: static_url + '/banner/banner_5.jpg'}
+    ],
+    skinList: [
+        {title: '公路', imgUrl: static_url + '/bg/user_bg_1.jpg'},
+        {title: '黑夜森林', imgUrl: static_url + '/bg/user_bg_2.jpg'},
+        {title: '鱼与水', imgUrl: static_url + '/bg/user_bg_3.jpg'},
+        {title: '山之剪影', imgUrl: static_url + '/bg/user_bg_4.jpg'},
+        {title: '火山', imgUrl: static_url + '/bg/user_bg_5.jpg'},
+        {title: '科技', imgUrl: static_url + '/bg/user_bg_6.jpg'},
+        {title: '沙漠', imgUrl: static_url + '/bg/user_bg_7.jpg'},
+        {title: '叶子', imgUrl: static_url + '/bg/user_bg_8.jpg'},
+        {title: '早餐', imgUrl: static_url + '/bg/user_bg_9.jpg'},
+        {title: '英伦骑车', imgUrl: static_url + '/bg/user_bg_10.jpg'},
+        {title: '草原', imgUrl: static_url + '/bg/user_bg_11.jpg'},
+        {title: '城市', imgUrl: static_url + '/bg/user_bg_12.jpg'}
+    ],
+    shakeSound: {
+        startUrl: static_url + '/sound/shake.mp3',
+        start: '',
+        completeUrl: static_url + '/sound/shakeComplete.wav',
+        complete: ''
+    },
+    shakeWelcomeImg: static_url + '/images/shake_welcome.png'
+};
+
+
+
 var dev = {
 	server:'http://127.0.0.1:8080/',
-	appId:'wx4a509c6b5c79bd94',
+	appId:prod.appId,
     city: '',
-    count: 20,//数据默认拉取数目
-    baiduAK: 'Y1R5guY8Y2GNRdDpLz7SUeM3QgADAXec',
-    apiList: {
-        popular: 'https://api.douban.com/v2/movie/in_theaters',
-        coming: 'https://api.douban.com/v2/movie/coming_soon',
-        top: 'https://api.douban.com/v2/movie/top250',
-        search: {
-            byKeyword: 'https://api.douban.com/v2/movie/search?q=', 
-            byTag: 'https://api.douban.com/v2/movie/search?tag='
-        },
-        filmDetail: 'https://api.douban.com/v2/movie/subject/',
-        personDetail: 'https://api.douban.com/v2/movie/celebrity/',
-        baiduMap: 'https://api.map.baidu.com/geocoder/v2/'
-    },
-    hotKeyword: ['功夫熊猫', '烈日灼心', '摆渡人', '长城', '我不是潘金莲', '这个杀手不太冷', '驴得水', '海贼王之黄金城', '西游伏妖片', '我在故宫修文物', '你的名字'],
-    hotTag: ['动作', '喜剧', '爱情', '悬疑'],
-    bannerList: [
-        {type:'film', id: '26683290', imgUrl: url + '/images/banner_1.jpg'},
-        {type:'film', id: '25793398', imgUrl: url + '/images/banner_2.jpg'},
-        {type:'film', id: '26630781', imgUrl: url + '/images/banner_3.jpg'},
-        {type:'film', id: '26415200', imgUrl: url + '/images/banner_4.jpg'},
-        {type:'film', id: '3025375', imgUrl: url + '/images/banner_5.jpg'}
-    ],
-    skinList: [
-        {title: '公路', imgUrl: url + '/images/user_bg_1.jpg'},
-        {title: '黑夜森林', imgUrl: url + '/images/user_bg_2.jpg'},
-        {title: '鱼与水', imgUrl: url + '/images/user_bg_3.jpg'},
-        {title: '山之剪影', imgUrl: url + '/images/user_bg_4.jpg'},
-        {title: '火山', imgUrl: url + '/images/user_bg_5.jpg'},
-        {title: '科技', imgUrl: url + '/images/user_bg_6.jpg'},
-        {title: '沙漠', imgUrl: url + '/images/user_bg_7.jpg'},
-        {title: '叶子', imgUrl: url + '/images/user_bg_8.jpg'},
-        {title: '早餐', imgUrl: url + '/images/user_bg_9.jpg'},
-        {title: '英伦骑车', imgUrl: url + '/images/user_bg_10.jpg'},
-        {title: '草原', imgUrl: url + '/images/user_bg_11.jpg'},
-        {title: '城市', imgUrl: url + '/images/user_bg_12.jpg'}
-    ],
-    shakeSound: {
-        startUrl: url + '/sound/shake.mp3',
-        start: '',
-        completeUrl: url + '/sound/shakeComplete.wav',
-        complete: ''
-    },
-    shakeWelcomeImg: url + '/images/shake_welcome.png'
-};
-var prod = {
-	server:'https://leejean.cn/',
-	appId:'wx4a509c6b5c79bd94',
-    city: '',
-    count: 20,//数据默认拉取数目
-    baiduAK: 'Y1R5guY8Y2GNRdDpLz7SUeM3QgADAXec',
-    apiList: {
-        popular: 'https://api.douban.com/v2/movie/in_theaters',
-        coming: 'https://api.douban.com/v2/movie/coming_soon',
-        top: 'https://api.douban.com/v2/movie/top250',
-        search: {
-            byKeyword: 'https://api.douban.com/v2/movie/search?q=', 
-            byTag: 'https://api.douban.com/v2/movie/search?tag='
-        },
-        filmDetail: 'https://api.douban.com/v2/movie/subject/',
-        personDetail: 'https://api.douban.com/v2/movie/celebrity/',
-        baiduMap: 'https://api.map.baidu.com/geocoder/v2/'
-    },
-    hotKeyword: ['功夫熊猫', '烈日灼心', '摆渡人', '长城', '我不是潘金莲', '这个杀手不太冷', '驴得水', '海贼王之黄金城', '西游伏妖片', '我在故宫修文物', '你的名字'],
-    hotTag: ['动作', '喜剧', '爱情', '悬疑'],
-    bannerList: [
-        {type:'film', id: '26683290', imgUrl: url + '/images/banner_1.jpg'},
-        {type:'film', id: '25793398', imgUrl: url + '/images/banner_2.jpg'},
-        {type:'film', id: '26630781', imgUrl: url + '/images/banner_3.jpg'},
-        {type:'film', id: '26415200', imgUrl: url + '/images/banner_4.jpg'},
-        {type:'film', id: '3025375', imgUrl: url + '/images/banner_5.jpg'}
-    ],
-    skinList: [
-        {title: '公路', imgUrl: url + '/images/user_bg_1.jpg'},
-        {title: '黑夜森林', imgUrl: url + '/images/user_bg_2.jpg'},
-        {title: '鱼与水', imgUrl: url + '/images/user_bg_3.jpg'},
-        {title: '山之剪影', imgUrl: url + '/images/user_bg_4.jpg'},
-        {title: '火山', imgUrl: url + '/images/user_bg_5.jpg'},
-        {title: '科技', imgUrl: url + '/images/user_bg_6.jpg'},
-        {title: '沙漠', imgUrl: url + '/images/user_bg_7.jpg'},
-        {title: '叶子', imgUrl: url + '/images/user_bg_8.jpg'},
-        {title: '早餐', imgUrl: url + '/images/user_bg_9.jpg'},
-        {title: '英伦骑车', imgUrl: url + '/images/user_bg_10.jpg'},
-        {title: '草原', imgUrl: url + '/images/user_bg_11.jpg'},
-        {title: '城市', imgUrl: url + '/images/user_bg_12.jpg'}
-    ],
-    shakeSound: {
-        startUrl: url + '/sound/shake.mp3',
-        start: '',
-        completeUrl: url + '/sound/shakeComplete.wav',
-        complete: ''
-    },
-    shakeWelcomeImg: url + '/images/shake_welcome.png'
+    count: 20,
+    baiduAK:prod.baiduAK,
+    apiList: prod.apiList,
+    hotKeyword:prod.hotKeyword,
+    hotTag: prod.hotTag,
+    bannerList: prod.bannerList,
+    skinList: prod.skinList,
+    shakeSound: prod.shakeSound,
+    shakeWelcomeImg: prod.shakeWelcomeImg
 }
 module.exports = dev;

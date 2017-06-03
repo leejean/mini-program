@@ -27,6 +27,27 @@ function getInfos(data, cb, cb_fail) {
   );
 }
 
+function save(data, cb, cb_fail) {
+  var that = this;
+  httpclient.request(
+  	that.data.server + "api/info/saveInfo", 
+  	data, 
+  	'POST',  
+  	function(res){
+      typeof cb == 'function' && cb(res.data)
+    },
+    function() {
+      message.show.call(that,{
+        content: '网络开小差了',
+        icon: 'offline',
+        duration: 3000
+      })
+      typeof cb_fail == 'function' && cb_fail(res.data)
+    }
+  );
+}
+
 module.exports = {
-  getInfos: getInfos
+  getInfos: getInfos,
+  save: save
 }
