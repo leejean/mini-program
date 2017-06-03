@@ -23,10 +23,10 @@
     justify-content: flex-start;
 }
 .info-cover-img {
-    width: 190rpx;
-    height: 190rpx;
-    margin: 5rpx 0 0 15rpx;
-    border-radius: 5rpx;
+    width:160rpx;
+	height:160rpx;
+	margin:20rpx 10rpx 0 20rpx;
+	border-radius:5rpx;
 }
 .info-detail>view{
     width:500rpx;

@@ -12,9 +12,9 @@ Page({
 		pagesize:4,
 		bannerList: config.bannerList,
 		queryData:{
-			longitude:113.877012,
-			latitude:22.575624,
-			scope:100,
+			//longitude:113.877012,
+			//latitude:22.575624,
+			//scope:100,
 			infoType:1,
 			keyWord:''
 		},
