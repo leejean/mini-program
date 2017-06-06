@@ -1,19 +1,24 @@
 <view class="weapp-about">
-    <view class="weapp-name">电影推荐</view>
+    <view class="weapp-name">找呀</view>
+    <view class="webapp-title">寻找遗失的美好</view>	
     <view class="webapp-intro">
         <view class="webapp-intro-item">
-            <view class="webapp-intro-title">后端支持</view>
-            <view class="webapp-intro-content">豆瓣API：https://developers.douban.com/</view>
-            <view class="webapp-intro-content">百度地图API：http://lbsyun.baidu.com/</view>
+            <view class="webapp-intro-title">关于找呀</view>
+            <view class="webapp-intro-content">找呀lite是一个基于地理位置的失物招领服务平台，失主可通过定位服务快速找回丢失的物品。</view>
+        </view>
+        <view class="webapp-intro-item" style="text-align:center;">
+            <view class="webapp-intro-content"><image src="http://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTLCuE3s45as7NoAMDVgBrhvekYMoKlfUCcQYUPvTqT4VfwVqZhRUlYmt66ibOMiaAzokx3NDWaEIhGw/0" class="user-avatar"></image></view>
+            <view class="webapp-intro-content">易理坚</view>
+            <view class="webapp-intro-content">杂食类野生程序猿一枚</view>
+            <view class="webapp-intro-content">https://github.com/leejean</view>
         </view>
         <view class="webapp-intro-item">
-            <view class="webapp-intro-title">作者</view>
-            <view class="webapp-intro-content">sesine：https://github.com/yesifeng</view>
-        </view>
-        <view class="webapp-intro-item">
-            <view class="webapp-intro-title">此项目所使用到的API</view>
+            <view class="webapp-intro-title">技术栈</view>
             <view class="webapp-intro-content">
-            wx.request、wx.chooseImage、wx.previewImage、wx.playVoice、wx.saveFile、wx.setStorage、wx.getStorage、wx.clearStorage、wx.getStorageInfo、wx.getLocation、wx.getSystemInfo、wx.onAccelerometerChange、wx.showToast、wx.showModal、wx.showActionSheet、wx.setNavigationBarTitle、wx.navigateTo、wx.redirectTo、wx.login
+           		springboot+mybaties,swagger,redis,Ehchache
+            </view>
+            <view class="webapp-intro-content">
+           		阿里云ECS,OSS
             </view>
         </view>
     </view>
