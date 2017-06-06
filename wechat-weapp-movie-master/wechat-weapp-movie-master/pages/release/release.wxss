@@ -6,7 +6,7 @@
 }
 
 .form-list:first-child {
-    margin-top: 20rpx;
+    margin-top: 30rpx;
 }
 
 .form-list::before, .form-list::after {
@@ -33,7 +33,7 @@
     box-sizing: border-box;
     display: flex;
     width: 100%;
-    padding: 15rpx 40rpx;
+    padding: 25rpx 40rpx;
 }
 
 .form-item::before {
@@ -88,7 +88,10 @@ input, .input {
     border-radius: 80rpx;
     color: #fff;
 }
-
+.weui-uploader__title{
+	color:#808080;
+	font-size:28rpx;
+}
 .hidden {
     display: none;
 }

@@ -10,9 +10,9 @@ Page({
     infoType : 1,
     imageList: [],
     ossImageList: [],
-    sourceType: 2,//['拍照', '相册', '拍照或相册'],
-    sizeType: 1, //['压缩', '原图', '压缩或原图'],
-    count: 9,
+    sourceType: ['album', 'camera'],//['拍照', '相册', '拍照或相册'],
+    sizeType: ['original', 'compressed'], //['压缩', '原图', '压缩或原图'],
+    maxCount: 9,
     canChoose:true,
   },
   onLoad:function(options){
@@ -59,16 +59,36 @@ Page({
   },
   chooseImage: function () {
     var that = this
+//  wx.chooseImage({
+//    count: 1,
+//    success: function(res) {
+//      var tempFilePath = res.tempFilePaths[0]
+//      wx.saveFile({
+//        tempFilePath: tempFilePath,
+//        success: function(res) {
+//          var savedFilePath = res.savedFilePath
+//          console.log(savedFilePath)
+//          that.setData({
+//            pictures: that.data.pictures.concat(savedFilePath)
+//          })
+//          wx.setStorage({
+//            key: 'gallery',
+//            data: that.data.pictures
+//          })
+//        }
+//      })
+//    }
+//  })
     wx.chooseImage({
+    	count:1,//单次可选
       sourceType: that.data.sourceType,
       sizeType: that.data.sizeType,
-      count: this.data.count[this.data.countIndex],
       success: function (res) {
         that.setData({
           imageList: that.data.imageList.concat(res.tempFilePaths)
         })
         that.setData({
-          canChoose:that.data.imageList.length<that.data.count
+          canChoose:that.data.imageList.length<that.data.maxCount
         })
         wx.uploadFile({
 		      url: app.globalData.server + 'api/file/upload', 

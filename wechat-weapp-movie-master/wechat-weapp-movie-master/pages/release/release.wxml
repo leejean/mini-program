@@ -3,19 +3,19 @@
         <view class="form-item">
             <view class="form-item-hd">标题</view>
             <view class="form-item-bd">
-                <input type="text" name="title" value="{{title}}" placeholder="请填写标题" maxlength="10"/>
+                <input type="text" name="title" value="{{title}}" placeholder="请填写标题" maxlength="17"/>
             </view>
         </view>
          <view class="form-item">
             <view class="form-item-hd">地点</view>
             <view class="form-item-bd">
-                <input type="text" name="locationDesc" value="{{locationDesc}}" placeholder="{{infoType==1?'请填写丢失物品大概位置，如解放路':'请填写捡到物品大概位置，如解放路'}}" maxlength="50"/>
+                <input type="text" name="locationDesc" value="{{locationDesc}}" placeholder="{{infoType==1?'请填写丢失物品大概位置，如解放路':'请填写捡到物品大概位置，如解放路'}}" maxlength="17"/>
             </view>
         </view>
         <view class="form-item">
             <view class="form-item-hd">详情说明</view>
-            <view class="form-item-bd" style="height:75px;margin:15rpx 0 0 15rpx;">
-                <textarea name="infoDesc"   placeholder="{{infoType==1?'请填写丢失物品详情，如身份证、钱包':'请填写捡到物品详情，如身份证、钱包'}}" maxlength="50" cols="30" style="width:400rpx;">{{infoDesc}}</textarea>
+            <view class="form-item-bd" style="height:75rpx;margin:0rpx 0 0 13rpx;">
+                <textarea name="infoDesc"   placeholder="{{infoType==1?'请填写丢失物品详情，如身份证、钱包等':'请填写捡到物品详情，如身份证、钱包等'}}" maxlength="80" cols="50" style="width:450rpx;">{{infoDesc}}</textarea>
             </view>
         </view>
        
@@ -26,11 +26,11 @@
               <view class="weui-uploader">
                 <view class="weui-uploader__hd">
                   <view class="weui-uploader__title">上传{{infoType==1?'丢失物品图片，方便您快速找回':'捡到物品图片，方便失主快速找回'}}</view>
-                  <view class="weui-uploader__info">{{imageList.length}}/{{count}}</view>
+                  <view class="weui-uploader__info">{{imageList.length}}/{{maxCount}}</view>
                 </view>
                 <view class="weui-uploader__bd">
                   <view class="weui-uploader__files">
-                    <block wx:for="{{imageList}}" wx:for-item="image">
+                    <block wx:for="{{imageList}}" wx:for-item="image" wx:key="key">
                       <view class="weui-uploader__file">
                         <image class="weui-uploader__img" src="{{image}}" data-src="{{image}}" bindtap="previewImage"></image>
                       </view>
