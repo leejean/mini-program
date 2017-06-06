@@ -18,11 +18,13 @@ view {
 }
 
 .weapp-name {
-    font-size: 60rpx;
+    font-size: 50rpx;
     text-align: center;
     color: #555;
 }
-
+.webapp-title{
+	 text-align: center;
+}
 .webapp-intro {
     box-sizing: border-box;
     padding: 60rpx;
@@ -41,4 +43,10 @@ view {
 
 .webapp-intro-content {
     color: #ccc;
+}
+.user-avatar {
+    width: 200rpx;
+    height: 200rpx;
+    border-radius: 200rpx;
+    box-shadow: 0 0 300rpx 100rpx rgba(255, 255, 255, .2), 0 1px 0 rgba(255, 255, 255, 0.4);
 }
