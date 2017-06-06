@@ -1,9 +1,9 @@
 {
   "pages": [
+    "pages/home/home",
     "pages/newInfo/newInfo",
-    "pages/home/home", 
     "pages/release/release", 
-    
+    "pages/image/image", 
     
     "pages/popular/popular",
     "pages/coming/coming",
@@ -28,7 +28,7 @@
   "window": {
     "navigationBarBackgroundColor": "#27c79a",
     "navigationBarTextStyle": "white",
-    "navigationBarTitleText":  "电影推荐",
+    "navigationBarTitleText":  "找呀",
     "backgroundColor": "#fff",
     "backgroundTextStyle": "dark",
     "enablePullDownRefresh": true
@@ -45,7 +45,7 @@
       "selectedIconPath": "dist/images/popular_active_icon.png",
       "text": "发现"
     }, {
-      "pagePath": "pages/coming/coming",
+      "pagePath": "pages/image/image",
       "iconPath": "dist/images/coming_icon.png",
       "selectedIconPath": "dist/images/coming_active_icon.png",
       "text": "悬赏"
