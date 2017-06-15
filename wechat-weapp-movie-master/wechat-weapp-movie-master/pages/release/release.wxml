@@ -1,29 +1,27 @@
 <form bindsubmit="save">
     <view class="form-list">
-         <view class="form-item">
+         <view class="form-item"style="height:200rpx;padding-top:60rpx;">
             <button  class="pick-btn {{infoType==1?'pick-btn-active':''}}" data-id="1" bindtap="changeInfoType">丢失</button>
             <button  class="pick-btn {{infoType==2?'pick-btn-active':''}}" data-id="2"  bindtap="changeInfoType">捡到</button>
         </view>
         <view class="form-item">
-            <view class="form-item-hd">标题</view>
+            <view class="form-item-hd">{{infoType==1?'丢失物品':'捡到物品'}}</view>
             <view class="form-item-bd">
-                <input type="text" name="title" value="{{title}}" placeholder="请填写标题" maxlength="17"/>
+                <input type="text" name="title" value="{{title}}" placeholder="请填写物品名称，如钱包、身份证" maxlength="17"/>
             </view>
         </view>
          <view class="form-item">
-            <view class="form-item-hd">地点</view>
+            <view class="form-item-hd">{{infoType==1?'丢失地点':'捡到地点'}}</view>
             <view class="form-item-bd">
                 <input type="text" name="locationDesc" value="{{locationDesc}}" placeholder="{{infoType==1?'请填写丢失物品大概位置，如解放路':'请填写捡到物品大概位置，如解放路'}}" maxlength="17"/>
             </view>
         </view>
         <view class="form-item">
-            <view class="form-item-hd">详情说明</view>
+            <view class="form-item-hd">物品描述</view>
             <view class="form-item-bd" style="height:75rpx;margin:0rpx 0 0 13rpx;">
-                <textarea name="infoDesc"   placeholder="{{infoType==1?'请填写丢失物品详情，如身份证、钱包等':'请填写捡到物品详情，如身份证、钱包等'}}" maxlength="80" cols="50" style="width:450rpx;">{{infoDesc}}</textarea>
+                <textarea name="infoDesc"   placeholder="{{infoType==1?'请填写丢失物品描述，如颜色、大小等特征':'请填写捡到物品详情，如颜色、大小等特征'}}" maxlength="80" cols="50" style="width:450rpx;">{{infoDesc}}</textarea>
             </view>
         </view>
-       
-      
       <view class="weui-cells">
           <view class="weui-cell">
             <view class="weui-cell__bd">
@@ -51,5 +49,5 @@
         
     </view>
     
-    <button formType="submit" class="edit-btn">发   布</button>
+    <button formType="submit" class="edit-btn" style="margin-top:105rpx;">发   布</button>
 </form>
