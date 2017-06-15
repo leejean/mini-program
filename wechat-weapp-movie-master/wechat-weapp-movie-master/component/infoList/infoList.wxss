@@ -6,6 +6,17 @@
     text-align: center;
     color: #ccc;
 }
+.tag-lost,.tag-get{
+  color:white;
+  padding:0rpx 8rpx;
+  border-radius: 5rpx;
+}
+.tag-lost{
+  background: lightgreen
+}
+.tag-get{
+  background: hotpink
+}
 /*view{border:1px solid red;}*/
 .info {
     box-sizing: border-box;

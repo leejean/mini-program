@@ -14,7 +14,13 @@
                     <view class="info-detail">
                         <view class="title">{{infoItem.nickName}} </view>
                         <view class="desc">
-                          <text>{{infoItem.title}}</text>
+                          <block wx:if="{{infoItem.infoType==1}}">
+                            <text class="tag-lost">丢失</text>
+                          </block>
+                          <block wx:if="{{infoItem.infoType==2}}">
+                           <text class="tag-get">捡到</text>
+                          </block>
+                          <text>  {{infoItem.title}}</text>
                         </view>
                     </view>
                 </view>
