@@ -68,5 +68,12 @@ Page({
 		wx.navigateTo({
 			url: '../search/search'
 		})
-	}
+  },
+  previewImage: function (e) {
+    var current = e.target.dataset.src
+    wx.previewImage({
+      current: current,
+      urls: e.target.dataset.srcs
+    })
+  }
 })

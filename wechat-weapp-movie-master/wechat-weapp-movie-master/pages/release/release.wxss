@@ -76,16 +76,31 @@ input, .input {
 .input-placeholder {
     color: #808080;
 }
-
-.edit-btn {
+.edit-btn{
+  width:420rpx;
+  height:100rpx;
+  margin:0 auto;
+  font-size:36rpx;
+  text-align:center;
+  line-height:100rpx;
+  background-color:#27c79a;
+  border-radius:80rpx;
+  color:#fff;
+}
+.pick-btn{
     width: 300rpx;
     height: 80rpx;
     margin: 0 auto;
     font-size: 32rpx;
     text-align: center;
     line-height: 80rpx;
-    background-color: #27c79a;
+    border: 1px solid #D9D9D9;
     border-radius: 80rpx;
+    color: #27c79a;
+    background-color:#FFF;
+}
+.pick-btn-active{   
+    background-color: #27c79a;
     color: #fff;
 }
 .weui-uploader__title{

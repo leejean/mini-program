@@ -1,34 +1,87 @@
 @import "../../comm/style/animation.wxss";
+.loading-tip {
+    width: 100%;
+    height: 80rpx;
+    line-height: 80rpx;
+    text-align: center;
+    color: #ccc;
+}
+/*view{border:1px solid red;}*/
 .info {
     box-sizing: border-box;
-    width: 750rpx;
+    width: 100%;
     padding: 10rpx 15rpx;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-between;
-    box-shadow: 0 0 40rpx #f4f4f4 inset;
+    box-shadow: 0 0 40rpx #fff inset;
 }
 .info-item {
-    width: 750rpx;
-    height: 200rpx;
+    width: 100%;
+    height: auto;
     margin-bottom: 10rpx;
-    border-radius: 10rpx;
+    /*border-radius: 10rpx;*/
     background-color: #fff;
-    border: 1px solid #e4e4e4;
+    border-bottom: 1px solid #e4e4e4;
     box-shadow: 0 20rpx 40rpx #eee;
     overflow: hidden;
     animation: fadeIn 1s;
     display: flex;
     justify-content: flex-start;
+    padding:10rpx;
 }
-.info-cover-img {
-    width:160rpx;
-	height:160rpx;
-	margin:20rpx 10rpx 0 20rpx;
+.info-desc,.info-position,.info-foot{
+   width: 750rpx;
+}
+.info-position,.info-foot{
+  margin-left:124rpx;
+   font-size:24rpx;
+}
+.info-desc{margin-top:15rpx}
+.info-position{
+  color:teal;
+  margin-bottom:8rpx;
+}
+.info-foot{
+  color:slategray;
+  margin-bottom:20rpx;
+}
+.info-imgs{
+   width:586rpx;
+   margin-left:124rpx;
+   margin-top:20rpx;
+}
+.info-avatar{
+  float:left;
+}
+.info-detail{
+  float:left;
+  width:560rpx;
+  margin-left:25rpx;
+}
+.info-detail>.title{	
+	font-size:30rpx;
+	font-weight:bold;
+  color:darkslategray;
+}
+.info-detail>.desc{
+	height:50rpx;
+	font-size:28rpx;
+	margin-top:12rpx;
+}
+.info-avatar-img {
+  width:100rpx;
+	height:100rpx;
 	border-radius:5rpx;
 }
-.info-detail>view{
+.info-img{
+  width:160rpx;
+  height:160rpx;
+  border-radius:2rpx;
+  margin:6rpx 10rpx 0 2rpx;
+}
+/*.info-detail>view{
     width:500rpx;
     white-space:nowrap;
     text-overflow:ellipsis;
@@ -52,11 +105,4 @@
 	color:#8D8D8D;
 	font-size:24rpx;
 	padding:10rpx 0 0 12rpx;
-}
-.loading-tip {
-    width: 100%;
-    height: 80rpx;
-    line-height: 80rpx;
-    text-align: center;
-    color: #ccc;
-}
+}*/

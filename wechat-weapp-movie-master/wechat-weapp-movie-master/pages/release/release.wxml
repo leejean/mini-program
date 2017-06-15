@@ -1,5 +1,9 @@
 <form bindsubmit="save">
     <view class="form-list">
+         <view class="form-item">
+            <button  class="pick-btn {{infoType==1?'pick-btn-active':''}}" data-id="1" bindtap="changeInfoType">丢失</button>
+            <button  class="pick-btn {{infoType==2?'pick-btn-active':''}}" data-id="2"  bindtap="changeInfoType">捡到</button>
+        </view>
         <view class="form-item">
             <view class="form-item-hd">标题</view>
             <view class="form-item-bd">
@@ -47,5 +51,5 @@
         
     </view>
     
-    <button formType="submit" class="edit-btn">保 存</button>
+    <button formType="submit" class="edit-btn">发   布</button>
 </form>

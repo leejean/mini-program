@@ -24,6 +24,15 @@ Page({
 			title: "发布" + that.data.infoTypes[options.infoType-1]
 		})
   },
+  changeInfoType:function(e){
+    var that  = this
+    that.setData({
+      infoType: e.target.dataset.id
+    })
+    wx.setNavigationBarTitle({
+      title: "发布" + that.data.infoTypes[e.target.dataset.id - 1]
+    })
+  },
   save: function(e) {
   	var that =  this;
   	message.show.call(that,{
@@ -84,21 +93,19 @@ Page({
       sourceType: that.data.sourceType,
       sizeType: that.data.sizeType,
       success: function (res) {
-        that.setData({
-          imageList: that.data.imageList.concat(res.tempFilePaths)
-        })
-        that.setData({
-          canChoose:that.data.imageList.length<that.data.maxCount
-        })
+        var tempFilePath = res.tempFilePaths[0];
         wx.uploadFile({
 		      url: app.globalData.server + 'api/file/upload', 
-		      filePath: that.data.imageList[0],
+          filePath: tempFilePath,
 		      name: 'file',
 		      success: function(dto){
 		        dto = JSON.parse(dto.data)
 		        if(dto.status){
+              console.info(dto.data);
 		        	that.setData({
-			          ossImageList:that.data.ossImageList.concat(dto.data)
+			           ossImageList:that.data.ossImageList.concat(dto.data),
+                 imageList: that.data.imageList.concat(dto.data),
+                 canChoose: that.data.imageList.length < that.data.maxCount
 			        })	   
 		        }else{
 		        	wx.showToast({
