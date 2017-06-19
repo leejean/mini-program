@@ -66,7 +66,7 @@ Page({
 	//跳转到搜索页
 	viewSearch: function() {
 		wx.navigateTo({
-			url: '../search/search'
+			url: '../infosearch/infosearch'
 		})
   },
   previewImage: function (e) {

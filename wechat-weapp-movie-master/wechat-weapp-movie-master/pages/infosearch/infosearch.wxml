@@ -1,0 +1,12 @@
+<view class="search-hd">
+    <view class="search-area">
+            <view class="search-type" bindtap="changeSearchType">{{searchTypeName}}</view>
+            <input class="search-txt" name="keyword" bindinput="bindInput" placeholder="请输入物品名称、地点信息"/>
+            <button class="search-btn" bindtap="search">搜索</button>
+    </view>
+    
+</view>
+<import src="../../component/infoSearchList/infoSearchList.wxml"/>
+<template is="infoSearchList" data="{{infos: infos}}"/>
+<import src="../../component/message/message.wxml"/>
+<template is="message" data="{{message: message}}"/>

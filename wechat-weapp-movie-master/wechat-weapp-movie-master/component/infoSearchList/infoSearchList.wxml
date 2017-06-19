@@ -1,0 +1,42 @@
+<template name="infoSearchList">
+
+    <view class="info">
+
+        <block wx:for="{{infos}}" wx:for-index="infoIndex" wx:for-item="infoItem" wx:key="info">
+             <view catchtap="viewInfoDetail" data-id="{{infoItem.id}}" class="info-item" style="flex-wrap:wrap">
+                <view class="info-desc">
+                    <view class="info-avatar">
+                        <image src="{{infoItem.avatarUrl}}" class="info-avatar-img"></image>
+                    </view>
+                    <view class="info-detail">
+                        <view class="title">{{infoItem.nickName}} </view>
+                        <view class="desc">
+                          <block wx:if="{{infoItem.infoType==1}}">
+                            <text class="tag-lost">丢失</text>
+                          </block>
+                          <block wx:if="{{infoItem.infoType==2}}">
+                           <text class="tag-get">捡到</text>
+                          </block>
+                          <text>  {{infoItem.title}}</text>
+                        </view>
+                    </view>
+                </view>
+                <view class="info-imgs">
+                    <block wx:for="{{infoItem.imgsList}}" wx:for-index="idx" wx:for-item="img" wx:key="img">
+                       <image src="{{img}}?x-oss-process=image/resize,w_80,h_80" class="info-img" data-srcs="{{infoItem.imgsList}}" data-src="{{img}}" data-index="{{idx}}" bindtap="previewImage"></image>
+                    </block>
+                </view>
+                <view class="info-position">
+                  {{infoItem.locationDesc}}
+                </view>
+                <view class="info-foot">
+                    <text>{{infoItem.timeAgo}} </text>
+                    <text></text>
+                </view>
+            </view>
+        </block>
+
+
+    </view>
+
+</template>

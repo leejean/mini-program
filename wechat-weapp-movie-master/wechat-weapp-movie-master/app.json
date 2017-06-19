@@ -1,9 +1,12 @@
 {
   "pages": [
+    "pages/infosearch/infosearch",
     "pages/home/home",
     "pages/newInfo/newInfo",
     "pages/release/release", 
-    "pages/image/image", 
+    "pages/image/image",
+   
+    
     
     "pages/popular/popular",
     "pages/coming/coming",
