@@ -6,17 +6,7 @@
     text-align: center;
     color: #ccc;
 }
-.tag-lost,.tag-get{
-  color:white;
-  padding:0rpx 8rpx;
-  border-radius: 5rpx;
-}
-.tag-lost{
-  background: lightgreen
-}
-.tag-get{
-  background: hotpink
-}
+
 /*view{border:1px solid red;}*/
 .info {
     box-sizing: border-box;
@@ -74,12 +64,25 @@
 .info-detail>.title{	
 	font-size:30rpx;
 	font-weight:bold;
-  color:darkslategray;
+  color:#686868;
 }
 .info-detail>.desc{
 	height:50rpx;
 	font-size:28rpx;
 	margin-top:12rpx;
+}
+.tag-lost, .tag-get {
+  color:white;
+  padding:1rpx 8rpx;
+  border-radius:5rpx;
+  font-size:24rpx;
+}
+
+.tag-lost{
+  background: lightgreen;
+}
+.tag-get{
+  background: hotpink
 }
 .info-avatar-img {
   width:100rpx;

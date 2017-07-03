@@ -1,11 +1,10 @@
 {
   "pages": [
-    "pages/infosearch/infosearch",
+   
     "pages/home/home",
-    "pages/newInfo/newInfo",
     "pages/release/release", 
     "pages/image/image",
-   
+    "pages/infosearch/infosearch",
     
     
     "pages/popular/popular",
@@ -31,32 +30,27 @@
   "window": {
     "navigationBarBackgroundColor": "#27c79a",
     "navigationBarTextStyle": "white",
-    "navigationBarTitleText":  "找呀",
+    "navigationBarTitleText":  "校园失物招领",
     "backgroundColor": "#fff",
     "backgroundTextStyle": "dark",
     "enablePullDownRefresh": true
   },
   "tabBar": {
     "color": "#686868",
-    "selectedColor": "#47a86c",
+    "selectedColor": "#27C79A",
     "backgroundColor": "#ffffff",
     "borderStyle": "white",
     "list": [
     {
       "pagePath": "pages/home/home",
-      "iconPath": "dist/images/popular_icon.png",
-      "selectedIconPath": "dist/images/popular_active_icon.png",
+      "iconPath": "dist/images/find_icon.png",
+      "selectedIconPath": "dist/images/find_active_icon.png",
       "text": "发现"
-    }, {
-      "pagePath": "pages/image/image",
-      "iconPath": "dist/images/coming_icon.png",
-      "selectedIconPath": "dist/images/coming_active_icon.png",
-      "text": "悬赏"
-    },
+     },
     {
-      "pagePath": "pages/newInfo/newInfo",
-      "iconPath": "dist/images/top_icon.png",
-      "selectedIconPath": "dist/images/top_active_icon.png",
+      "pagePath": "pages/release/release",
+      "iconPath": "dist/images/release_icon.png",
+      "selectedIconPath": "dist/images/release_active_icon.png",
       "text": "发布"
     },
     {

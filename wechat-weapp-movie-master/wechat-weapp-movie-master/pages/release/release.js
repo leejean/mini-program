@@ -17,11 +17,8 @@ Page({
   },
   onLoad:function(options){
     var that = this
-    that.setData({
-    	infoType:options.infoType
-    })
     wx.setNavigationBarTitle({
-			title: "发布" + that.data.infoTypes[options.infoType-1]
+			title: "发布" + that.data.infoTypes[that.data.infoType-1]
 		})
   },
   changeInfoType:function(e){
