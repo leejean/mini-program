@@ -4,7 +4,8 @@ Page({
   data:{
     gridList: [
       //{enName:'favorite', zhName:'收藏'},
-      //{enName:'history', zhName:'浏览记录'},
+      {enName:'history', zhName:'浏览记录'},
+      {enName:'released', zhName:'我发布的'},
       {enName:'shake', zhName:'摇一摇'},
       {enName:'gallery', zhName:'相册'},
       //{enName:'setting', zhName:'设置'}
