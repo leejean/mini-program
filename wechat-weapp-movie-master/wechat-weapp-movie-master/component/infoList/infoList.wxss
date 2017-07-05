@@ -37,7 +37,7 @@
 }
 .info-position,.info-foot{
   margin-left:124rpx;
-   font-size:24rpx;
+   font-size:22rpx;
 }
 .info-desc{margin-top:15rpx}
 .info-position{
@@ -85,15 +85,17 @@
   background: hotpink
 }
 .info-avatar-img {
-  width:100rpx;
-	height:100rpx;
+    width:90rpx;
+	height:90rpx;
 	border-radius:5rpx;
 }
 .info-img{
   width:160rpx;
   height:160rpx;
-  border-radius:2rpx;
+  border-radius:4rpx;
   margin:6rpx 10rpx 0 2rpx;
+  display:inline-block;
+  background-position:center center;
 }
 /*.info-detail>view{
     width:500rpx;

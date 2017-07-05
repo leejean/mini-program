@@ -1,16 +1,18 @@
 <view class="weapp-about">
-    <view class="weapp-name">找呀</view>
-    <view class="webapp-title">寻找遗失的美好</view>	
+    <view class="weapp-name">校园失物招领</view>
+    <view class="webapp-title">帮你寻找遗失的美好</view>	
     <view class="webapp-intro">
         <view class="webapp-intro-item">
-            <view class="webapp-intro-title">关于找呀</view>
-            <view class="webapp-intro-content">找呀lite是一个基于地理位置的失物招领服务平台，失主可通过定位服务快速找回丢失的物品。</view>
+            <view class="webapp-intro-title">关于</view>
+            <view class="webapp-intro-content">	「校园失物招领lite」是一个帮助在校学生快速找回丢失物品的信息服务平台。</view>
         </view>
         <view class="webapp-intro-item" style="text-align:center;">
             <view class="webapp-intro-content"><image src="http://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTLCuE3s45as7NoAMDVgBrhvekYMoKlfUCcQYUPvTqT4VfwVqZhRUlYmt66ibOMiaAzokx3NDWaEIhGw/0" class="user-avatar"></image></view>
-            <view class="webapp-intro-content">易理坚</view>
+            <view class="webapp-intro-content">Coder:易理坚</view>
             <view class="webapp-intro-content">杂食类野生程序猿一枚</view>
-            <view class="webapp-intro-content">https://github.com/leejean</view>
+            <view class="webapp-intro-content">WeChat:ilove_cp3</view>
+            <view class="webapp-intro-content">GitHub:https://github.com/leejean</view>
+            <view class="webapp-intro-content">E-Mail:http://ilove_cp3@163.com</view>
         </view>
         <view class="webapp-intro-item">
             <view class="webapp-intro-title">技术栈</view>

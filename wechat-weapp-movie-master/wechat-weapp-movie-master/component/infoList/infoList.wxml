@@ -26,7 +26,8 @@
                 </view>
                 <view class="info-imgs">
                     <block wx:for="{{infoItem.imgsList}}" wx:for-index="idx" wx:for-item="img" wx:key="img">
-                       <image src="{{img}}?x-oss-process=image/resize,w_80,h_80" class="info-img" data-srcs="{{infoItem.imgsList}}" data-src="{{img}}" data-index="{{idx}}" bindtap="previewImage"></image>
+                       <view style="background-image:url('{{img}}?x-oss-process=image/resize,w_80')" class="info-img" data-srcs="{{infoItem.imgsList}}" data-src="{{img}}" data-index="{{idx}}" bindtap="previewImage"></view>
+                       <!-- <image src="{{img}}?x-oss-process=image/resize,w_80" class="info-img" data-srcs="{{infoItem.imgsList}}" data-src="{{img}}" data-index="{{idx}}" bindtap="previewImage"></image>  -->
                     </block>
                 </view>
                 <view class="info-position">

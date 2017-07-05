@@ -19,6 +19,7 @@ function getInfos(data, cb, fail_cb) {
 				 if(dto.data.rows.length === 0){
 		          that.setData({
 		            hasMore: false,
+		            showLoading: false
 		          })
 		        }else{
 		          data.page = dto.data.page+1;
