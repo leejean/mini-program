@@ -1,0 +1,46 @@
+<view class="search-hd">
+    <view class="search-keyword">
+        <view class="search-keyword-title">热门学校</view>
+        <view 
+        wx:for="{{hotSchools}}" 
+        wx:for-item="school" 
+        wx:key="school" 
+        class="search-keyword-item" 
+        data-id="{{school.id}}" 
+        data-name="{{school.schoolName}}"
+        bindtap="searchByKeyword">
+        		{{school.schoolName}}
+        </view>        
+    </view>
+    <view class="search-keyword">
+        <view class="search-keyword-title">搜索学校</view>
+    </view>
+    <view class="search-area">
+        <form bindsubmit="search">
+            <view class="search-title">校名</view>
+            <input class="search-txt" name="keyword" placeholder="支持模糊查询"/>
+            <button class="search-btn" formType="submit">搜索</button>
+        </form>
+    </view>
+    <view class="result-area-title" wx:if="{{resultTitle}}">
+        {{resultTitle}}
+    </view>
+    <view class="result-area">
+    	<view 
+        wx:for="{{searchSchools}}" 
+        wx:for-item="school" 
+        wx:key="school" 
+        class="result-item" 
+        data-id="{{school.id}}" 
+        data-name="{{school.schoolName}}"
+        bindtap="bindSchool">
+        		<text class="{{word.hightlignt==true?'hight-lignt':''}}"
+        		  wx:for="{{school.words}}" 
+        		  wx:for-item="word" 
+        		  wx:key="word" >{{word.word}}</text>
+        </view>
+    </view>
+    
+</view>
+<import src="../../component/message/message.wxml"/>
+<template is="message" data="{{message: message}}"/>

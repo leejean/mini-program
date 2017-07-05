@@ -77,4 +77,4 @@ var dev = {
     shakeSound: prod.shakeSound,
     shakeWelcomeImg: prod.shakeWelcomeImg
 }
-module.exports = prod;
+module.exports = dev;

@@ -5,7 +5,7 @@
     "pages/release/release", 
     "pages/image/image",
     "pages/infosearch/infosearch",
-    
+    "pages/bind/bind",
     
     "pages/popular/popular",
     "pages/coming/coming",
@@ -45,7 +45,7 @@
       "pagePath": "pages/home/home",
       "iconPath": "dist/images/find_icon.png",
       "selectedIconPath": "dist/images/find_active_icon.png",
-      "text": "发现"
+      "text": "校园"
      },
     {
       "pagePath": "pages/release/release",

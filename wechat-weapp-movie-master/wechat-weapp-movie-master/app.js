@@ -5,18 +5,11 @@ App({
     userInfo: null,
     loginCode: null,
     server: config.server,
-    appId: config.appId,
-    apiNames: ['WX_CODE', 'WX_CHECK_USER', 'WX_DECODE_USERINFO']
+    appId: config.appId
   },
   onLaunch: function() {
     // 获取用户信息
     this.initUserInfo()
-    //初始化缓存
-    //this.initStorage()
-
-    //this.get3rdSessionId()
-
-    //this.getUserAllData()
   },
   initUserInfo:function(cb){
     var that = this
@@ -39,33 +32,33 @@ App({
       }
     })
   },
-  getCity: function(cb) {
-    var that = this
-    wx.getLocation({
-      type: 'gcj02',
-      success: function (res) {
-        var locationParam = res.latitude + ',' + res.longitude + '1'
-        wx.request({
-          url: config.apiList.baiduMap,
-          data: {
-            ak: config.baiduAK,
-            location: locationParam,
-            output: 'json',
-            pois: '1'
-          },
-          method: 'GET',
-          success: function(res){
-            config.city = res.data.result.addressComponent.city.slice(0,-1)
-            typeof cb == "function" && cb(res.data.result.addressComponent.city.slice(0,-1))
-          },
-          fail: function(res) {
-            // 重新定位
-            that.getCity();
-          }
-        })
-      }
-    })
-  },
+//getCity: function(cb) {
+//  var that = this
+//  wx.getLocation({
+//    type: 'gcj02',
+//    success: function (res) {
+//      var locationParam = res.latitude + ',' + res.longitude + '1'
+//      wx.request({
+//        url: config.apiList.baiduMap,
+//        data: {
+//          ak: config.baiduAK,
+//          location: locationParam,
+//          output: 'json',
+//          pois: '1'
+//        },
+//        method: 'GET',
+//        success: function(res){
+//          config.city = res.data.result.addressComponent.city.slice(0,-1)
+//          typeof cb == "function" && cb(res.data.result.addressComponent.city.slice(0,-1))
+//        },
+//        fail: function(res) {
+//          // 重新定位
+//          that.getCity();
+//        }
+//      })
+//    }
+//  })
+//},
   initStorage: function() {
     wx.getStorageInfo({
       success: function(res) {

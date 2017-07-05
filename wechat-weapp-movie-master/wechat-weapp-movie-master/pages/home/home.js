@@ -22,14 +22,30 @@ Page({
 		var that = this
 		//在当前页面显示导航条加载动画
 		wx.showNavigationBarLoading()
-		app.getCity(function(){
-			//隐藏导航条加载动画
-			wx.hideNavigationBarLoading()
-			wx.setNavigationBarTitle({
-				title: '发现'// + config.city
+		
+		info.getInfos.call(that,that.data.queryData)
+		wx.hideNavigationBarLoading()
+		
+		if(app.globalData.userInfo.schoolId==0){
+			wx.showModal({
+			  title: '提示',
+			  content: '你的账号暂未绑定学校信息',
+			  showCancel:false,
+			  confirmText:'立即绑定',
+			  confirmColor:"#27C79A",
+			  success: function(res) {
+			    if (res.confirm) {
+			      wx.navigateTo({
+						url: '../bind/bind?userId='+app.globalData.userInfo.id
+					})
+			    }
+			  }
 			})
-			info.getInfos.call(that,that.data.queryData)
-		})
+		}else{
+			wx.setNavigationBarTitle({
+				title: app.globalData.userInfo.schoolName
+			})
+		}
 		
 	},
 	//监听该页面用户下拉刷新事件
