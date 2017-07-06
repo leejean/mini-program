@@ -1,6 +1,6 @@
 <view class="search-hd">
     <view class="search-keyword">
-        <view class="search-keyword-title">热门学校</view>
+       <view class="search-keyword-title">热门学校</view>
         <view 
         wx:for="{{hotSchools}}" 
         wx:for-item="school" 
@@ -10,7 +10,7 @@
         data-name="{{school.schoolName}}"
         bindtap="searchByKeyword">
         		{{school.schoolName}}
-        </view>        
+        </view>      
     </view>
     <view class="search-keyword">
         <view class="search-keyword-title">搜索学校</view>

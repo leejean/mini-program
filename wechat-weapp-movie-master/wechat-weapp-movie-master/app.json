@@ -1,11 +1,11 @@
 {
   "pages": [
-   
+  
     "pages/home/home",
     "pages/release/release", 
     "pages/image/image",
     "pages/infosearch/infosearch",
-    "pages/bind/bind",
+     "pages/bind/bind",
     
     "pages/popular/popular",
     "pages/coming/coming",

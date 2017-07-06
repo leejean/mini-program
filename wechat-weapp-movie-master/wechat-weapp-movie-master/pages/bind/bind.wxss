@@ -13,12 +13,12 @@
 
 }
 .result-area-title{
-	box-sizing: border-box;
-    position: relative;
-    margin: 0 30rpx 20rpx 35rpx;
-    font-size:22rpx;
-    color: #555;
-    font-family: "微软雅黑";
+  box-sizing:border-box;
+  position:relative;
+  margin:25rpx 30rpx 5rpx 38rpx;
+  font-size:22rpx;
+  color:#555;
+  font-family:"微软雅黑";
 }
 .result-area{
 	box-sizing: border-box;

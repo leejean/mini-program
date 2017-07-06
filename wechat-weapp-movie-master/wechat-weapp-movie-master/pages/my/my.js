@@ -58,5 +58,10 @@ Page({
 		wx.navigateTo({
 			url: "../skin/skin"
 		})
+  },
+  toBindSchool:function(){
+			wx.navigateTo({
+					url: '../bind/bind?userId='+app.globalData.userInfo.id
+			})
   }
 })

@@ -11,7 +11,11 @@
                 <view class="user-sex-female"></view>
             </block>
         </view>
-        <view class="user-location">{{userInfo.province}},{{userInfo.city}}</view>
+        <view class="user-location" bindtap="toBindSchool">
+        	{{userInfo.schoolName}}
+        	<view class="user-school-edit"></view>
+        </view>
+        
     </view>
     <view class="grids">
         <block wx:for="{{gridList}}" wx:for-item="gridItem" wx:for-index="gridIndex" wx:key="grid">

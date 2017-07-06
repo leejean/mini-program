@@ -1,6 +1,6 @@
 var message = require('../../component/message/message')
-var douban  = require('../../comm/script/fetch')
-var config  = require('../../comm/script/config')
+var user = require('../../comm/script/user')
+var school = require('../../comm/script/school')
 Page({
   data:{
   	resultTitle:null,
@@ -21,16 +21,13 @@ Page({
   },
   initHotSchools:function(){
   	var that  = this
-  	that.setData({
-  		hotSchools:[
-  			{id:1,schoolName:"北京大学"},
-  			{id:2,schoolName:"中国人民大学"},
-  			{id:3,schoolName:"清华大学"},
-  			{id:2,schoolName:"中国人民大学"},
-  			{id:3,schoolName:"清华大学"},
-  			{id:2,schoolName:"中国人民大学"},
-  			{id:3,schoolName:"清华大学"}
-  		]
+  	school.findHotSchools.call(
+  		that,
+  		{topsize:8},
+  		function(dto){
+	  			that.setData({
+			  		hotSchools:dto.data
+			  	})
   	})
   },
   search: function(e) {
@@ -44,21 +41,33 @@ Page({
       })
       return false
     } else {
-    	var searchSchools = [{id:1,schoolName:"湖南大学"}];
-    	if(searchSchools.length>0){
-    		for(var idx in searchSchools){
-    		searchSchools[idx].words = that.hightLightKeyWords(keyword,searchSchools[idx].schoolName);
-    	}
-      that.setData({
-		  		searchSchools:searchSchools,
-		  		resultTitle:"搜索结果"
-	  	})
-    	}else{
-    		that.setData({
-		  		searchSchools:[],
-		  		resultTitle:"未找到 '"+keyword+"' 学校信息"
-	  		})
-    	}
+    	var searchSchools = [];
+    	school.findByNameLike.call(
+  		that,
+  		{
+  			schoolName:keyword,
+  			topsize:8
+  		},
+  		function(dto){
+	  			searchSchools = dto.data;
+	  			if(searchSchools.length>0){
+    			for(var idx in searchSchools){
+		    			searchSchools[idx].words = that.hightLightKeyWords(keyword,searchSchools[idx].schoolName);
+		    	}
+		      that.setData({
+				  		searchSchools:searchSchools,
+				  		resultTitle:"搜索结果"
+			  	})
+		    	}else{
+		    			that.setData({
+				  			searchSchools:[],
+				  			resultTitle:"未找到 '"+keyword+"' 学校信息"
+			  			})
+		    	}
+  		}
+  		)
+    	
+    	
     }
   },
   hightLightKeyWords:function(keyword,content){
@@ -88,9 +97,23 @@ Page({
 		  confirmColor:"#27C79A",
 		  success: function(res) {
 		    if (res.confirm) {
-		      console.info(schoolId);
 			    console.info(schoolName);
-			    console.info(userId);
+			    user.bindSchool.call(
+  				that,
+		  		{
+		  			userId:userId,
+		  			schoolId:schoolId
+		  		},
+		  		function(dto){
+			  			message.show.call(that,{
+				        content: dto.msg,
+				        icon: dto.status?'ok':'null',
+				        duration: 1500
+				      })
+			  			if(dto.status)wx.reLaunch({url: '../home/home'})
+		  		}
+  		)
+			    
 		    } else if (res.cancel) {
 		      console.log('用户点击取消')
 		    }
@@ -98,6 +121,7 @@ Page({
 		})
   },
   searchByKeyword:function(e){
-  	console.info(e.target.dataset.name);
+  	var that = this;
+  	that.bindSchool(e);
   }
 })

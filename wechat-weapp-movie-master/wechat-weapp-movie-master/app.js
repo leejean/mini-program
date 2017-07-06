@@ -1,5 +1,5 @@
 var config = require('comm/script/config')
-var user = require('comm/script/user')
+//var user = require('comm/script/user')
 App({
   globalData: {
     userInfo: null,
@@ -8,29 +8,7 @@ App({
     appId: config.appId
   },
   onLaunch: function() {
-    // 获取用户信息
-    this.initUserInfo()
-  },
-  initUserInfo:function(cb){
-    var that = this
-    wx.login({
-      success: function (res) {
-        that.globalData.loginCode = res.code
-        wx.getUserInfo({
-          success: function (res) {
-            var data = {
-            	code:that.globalData.loginCode,
-            	encryptedData:res.encryptedData,
-            	iv:res.iv
-            }
-            user.getUserInfo.call(that,data,function(dto){
-            	that.globalData.userInfo = dto.data
-            	console.info(that.globalData.userInfo)
-            })
-          }
-        })
-      }
-    })
+    
   },
 //getCity: function(cb) {
 //  var that = this

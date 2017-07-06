@@ -43,6 +43,7 @@ Page({
     }
     data.infoType = that.data.infoType;
     data.userId = app.globalData.userInfo.id;
+    data.schoolId = app.globalData.userInfo.schoolId;
     console.info(data);
     info.save.call(that, data ,function(dto){
 			 if(dto.status){
