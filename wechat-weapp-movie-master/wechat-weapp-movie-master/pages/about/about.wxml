@@ -8,16 +8,16 @@
         </view>
         <view class="webapp-intro-item" style="text-align:center;">
             <view class="webapp-intro-content"><image src="http://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTLCuE3s45as7NoAMDVgBrhvekYMoKlfUCcQYUPvTqT4VfwVqZhRUlYmt66ibOMiaAzokx3NDWaEIhGw/0" class="user-avatar"></image></view>
-            <view class="webapp-intro-content">Coder:易理坚</view>
-            <view class="webapp-intro-content">杂食类野生程序猿一枚</view>
-            <view class="webapp-intro-content">WeChat:ilove_cp3</view>
-            <view class="webapp-intro-content">GitHub:https://github.com/leejean</view>
-            <view class="webapp-intro-content">E-Mail:http://ilove_cp3@163.com</view>
+            <view class="webapp-intro-content">author:易理坚</view>
+            <view class="webapp-intro-content">野生程序猿一枚</view>
+            <view class="webapp-intro-content">weChat:ilove_cp3</view>
+            <view class="webapp-intro-content">gitHub:https://github.com/leejean</view>
+            <view class="webapp-intro-content">email:http://ilove_cp3@163.com</view>
         </view>
         <view class="webapp-intro-item">
             <view class="webapp-intro-title">技术栈</view>
             <view class="webapp-intro-content">
-           		springboot+mybaties,swagger,redis,Ehchache
+           		springcloud mybaties
             </view>
             <view class="webapp-intro-content">
            		阿里云ECS,OSS
