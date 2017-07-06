@@ -44,7 +44,6 @@ Page({
     data.infoType = that.data.infoType;
     data.userId = app.globalData.userInfo.id;
     data.schoolId = app.globalData.userInfo.schoolId;
-    console.info(data);
     info.save.call(that, data ,function(dto){
 			 if(dto.status){
 			 		wx.showToast({
@@ -92,6 +91,9 @@ Page({
       sizeType: that.data.sizeType,
       success: function (res) {
         var tempFilePath = res.tempFilePaths[0];
+        wx.showLoading({
+				  title: '图片上传中',
+				})
         wx.uploadFile({
 		      url: app.globalData.server + 'api/file/upload', 
           filePath: tempFilePath,
@@ -104,14 +106,21 @@ Page({
 			           ossImageList:that.data.ossImageList.concat(dto.data),
                  imageList: that.data.imageList.concat(dto.data),
                  canChoose: that.data.imageList.length < that.data.maxCount
-			        })	   
+			        })
+		        	wx.hideLoading()
 		        }else{
 		        	wx.showToast({
 							  title: data.msg,
 							  duration: 2000
 							})
 		        }
-		      }
+		      },
+		      fail:function(){
+		      	wx.hideLoading()
+		      },
+		      complete:function(){
+		      	
+		      },
 		    })
       }
     })
